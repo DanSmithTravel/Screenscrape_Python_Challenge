@@ -4,14 +4,11 @@
 
 import asyncio, asyncore, argparse, urllib.request, http
 from HTMLPage import HTMLPage
-#from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup
 
 def main():
         page = HTMLPage(url = 'https://news.ycombinator.com/')
-        print(page.HTMLBody)
-
-
-        
+                
     
 
 if __name__ == '__main__': main()
