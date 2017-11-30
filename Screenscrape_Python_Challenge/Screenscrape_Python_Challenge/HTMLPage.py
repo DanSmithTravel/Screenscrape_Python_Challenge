@@ -1,16 +1,23 @@
-import asyncio, asyncore, argparse, urllib.request, http, re, unicodedata
+import io, asyncio, asyncore, argparse, urllib.request, http, re, unicodedata
 from bs4 import BeautifulSoup
 
 class HTMLPage:
     """Creates an HTML object that can be navigated"""
 
-    def getHTMLPage(self, url): # Gets an HTTP(s) page and returns an HTML object
-        try:
-            self.html = urllib.request.urlopen(url)
-            print('we seem to have successfully retrieved {}'.format(url)) #Diagnostic message
-            return self.html
-        except Exception as e:
-            print(e)
+    def getHTMLPage(self, url = "", testmode = False): # Gets an HTTP(s) page and returns an HTML object
+        if testmode:
+            try:
+                return open('SampleHTML.html', encoding = 'utf-8')
+
+            except Exception as e:
+                print(e)
+
+        else:
+            try:
+                return urllib.request.urlopen(url)
+            
+            except Exception as e:
+                print(e)
 
     def parsePage(self, HTMLBody):  #parses the HTML body into a BeautifulSoup object.
         try:
@@ -20,7 +27,7 @@ class HTMLPage:
 
 
     def createElementDict(self, parsedPage, dictionary): # create a dictionary of all link groups
-        print('trying...')
+        #print('trying...')
         for element in parsedPage.find_all('tr'): #search and gather all 'athing' elements in the page. This are the containers for each link.
             #print('trying to iterate...')
             try:
@@ -116,16 +123,16 @@ class HTMLPage:
         return str(ustring).replace(u"\u2018", "'").replace(u"\u2019", "'").replace(u'\xa0', " ").replace(u"\u2013", "-").replace(u"\u201C", "\"").replace(u"\u201D", "\"")
 
     def __init__(self, **kwargs):
-        
         #declare variables
         self.elementDict = dict()
         self.bakedDict = dict()
-         
-        self.HTMLBody = self.getHTMLPage(kwargs.get('url'))
-        self.parsePage(self.HTMLBody)
-        self.createElementDict(self.parsedPage, self.elementDict)
-        self.bakeLinkDict(self.elementDict)
-        
+
+        if 'testmode' in kwargs: pass
+        else:
+            self.HTMLBody = self.getHTMLPage(kwargs.get('url'))
+            self.parsePage(self.HTMLBody)
+            self.createElementDict(self.parsedPage, self.elementDict)
+            self.bakeLinkDict(self.elementDict)
         
         #Initial Diagnostics
         #print(self.linkDict.get('15786855')) # prints a test that existed in the dict on 29 Nov.
