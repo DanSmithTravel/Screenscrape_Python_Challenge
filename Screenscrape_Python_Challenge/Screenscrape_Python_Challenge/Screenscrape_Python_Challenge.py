@@ -8,6 +8,8 @@ from bs4 import BeautifulSoup
 
 def main():
         page = HTMLPage(url = 'https://news.ycombinator.com/')
+        for link in page.bakedDict:
+            print(page.bakedDict.get(link))
                 
     
 
