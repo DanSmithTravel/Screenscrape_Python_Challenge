@@ -7,7 +7,7 @@ class HTMLPage:
     def getHTMLPage(self, url = "", testmode = False): # Gets an HTTP(s) page and returns an HTML object
         if testmode:
             try:
-                return open('SampleHTML.html', encoding = 'utf-8')
+                return open('testdata\SampleHTML.html', encoding = 'utf-8')
 
             except Exception as e:
                 print(e)
