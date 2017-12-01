@@ -1,4 +1,4 @@
-<html op="news"><head><meta content="origin" name="referrer"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="news.css?6cc09FUVMDowUEtyU7KX" rel="stylesheet" type="text/css"/>
+﻿<html op="news"><head><meta content="origin" name="referrer"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="news.css?6cc09FUVMDowUEtyU7KX" rel="stylesheet" type="text/css"/>
 <link href="favicon.ico" rel="shortcut icon"/>
 <link href="rss" rel="alternate" title="RSS" type="application/rss+xml"/>
 <title>Hacker News</title></head><body><center><table bgcolor="#f6f6ef" border="0" cellpadding="0" cellspacing="0" id="hnmain" width="85%">

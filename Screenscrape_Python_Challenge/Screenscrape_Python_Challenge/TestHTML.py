@@ -8,10 +8,10 @@ def test_getHTMLPage():
     assert open('testdata\HTMLSampleAnswerKey.html', encoding = 'utf-8').read() == x.getHTMLPage(testmode = True, testmodeFile = 'testdata\SampleHTML.html').read()
 
 def test_parsePage():
-    answerKey = BeautifulSoup(open('testdata\ParsedPageAnswerKey.txt','rb'), "html.parser")
-    y = HTMLPage(testmode = True, testmodeFile = 'testdata\SampleHTML.html')
-    y.parsePage(open('testdata\HTMLSampleAnswerKey.html'))#, encoding = 'utf-8'))
-    #print(y.parsedPage.encode('utf-8'))
+    answerKey = BeautifulSoup(open('testdata\SampleHTML.html'), "html.parser")
+    y = HTMLPage(testmode = True)
+    y.parsePage(open('testdata\SampleHTML.html'))
+
     assert y.parsedPage == answerKey
 
 def test_createElementDict():
