@@ -23,6 +23,9 @@
   <ItemGroup>
     <Compile Include="HTMLPage.py" />
     <Compile Include="Screenscrape_Python_Challenge.py" />
+    <Compile Include="TestHTML.py">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
