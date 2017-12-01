@@ -9,11 +9,11 @@ from TestHTML import test_createElementDict
 from bs4 import BeautifulSoup
 
 def main():
-        page = HTMLPage(url = 'https://news.ycombinator.com/ask')
+        #page = HTMLPage(url = 'https://news.ycombinator.com/')
         #page = HTMLPage(testmode = True, testmodeFile = 'testdata\SampleHTML.html', localexec = True)
-        for item in page.bakedDict:
-            print(page.bakedDict[item])
-        
+        #for item in page.bakedDict:
+        #    print(page.bakedDict[item])
+        generateTestData.generateParsedPage()
         #x = open('testdata\ElementDictAnswerKey.txt', mode = 'w', encoding = 'utf-8')
         #y = HTMLPage(testmode = True)
         #y.parsePage(open('testdata\HTMLSampleAnswerKey.html'))
@@ -28,6 +28,7 @@ class generateTestData():
             dbm = db = sqlite3.connect('testdata/testingHTML.db')
             cursor = db.cursor()
             # create a table for the bakedLinkDict data
+            cursor.execute('DROP TABLE IF EXISTS bakedLinkDict')
             cursor.execute('''CREATE TABLE bakedLinkDict(itemID TEXT PRIMARY KEY, id TEXT, headline TEXT,
                             url TEXT, score TEXT, author TEXT, age TEXT, comments TEXT)''')
             db.commit()
@@ -39,7 +40,7 @@ class generateTestData():
             y.bakeLinkDict(y.elementDict)
             # pull out element data and store it in the table.
             for element in y.bakedDict:
-                cursor.execute('''#INSERT INTO bakedLinkDict(itemID, id, headline, url, score, author, age, comments)
+                cursor.execute('''INSERT INTO bakedLinkDict(itemID, id, headline, url, score, author, age, comments)
                                   VALUES(?,?,?,?,?,?,?,?)''', (str(element), str(y.bakedDict[element]['id']),
                                                                str(y.bakedDict[element]['headline']), 
                                                                str(y.bakedDict[element]['URL']),
@@ -58,6 +59,6 @@ class generateTestData():
 
         db.close()
         dbm.close()
-
+    
 
 if __name__ == '__main__': main()
