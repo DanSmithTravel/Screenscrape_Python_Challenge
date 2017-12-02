@@ -1,4 +1,5 @@
-import io, asyncio, asyncore, argparse, urllib.request, http, re, unicodedata, time, aiohttp, async_timeout
+import io, asyncio, asyncore, argparse, urllib.request, http, re, unicodedata, time, aiohttp, async_timeout, threading
+from threading import current_thread
 from bs4 import BeautifulSoup
 
 class HTMLPage:
@@ -21,6 +22,8 @@ class HTMLPage:
 
         elif url != '':
             try:
+                #return urllib.request.urlopen(url)
+                
                 async with aiohttp.ClientSession() as session:
                     html = await self.fetchPage(session, url, 5)
                     return html
@@ -36,7 +39,7 @@ class HTMLPage:
             async with session.get(url) as response:
                 return await response.text()
 
-    def parsePage(self, HTMLBody, testmode = False):
+    async def parsePage(self, HTMLBody, testmode = False):
         """parses the HTML body into a BeautifulSoup object."""
         
         try:
@@ -170,25 +173,32 @@ class HTMLPage:
         else: # assume this is a live execute and NOT in testmode or running unit tests
             #self.URL = kwargs.get('url')
             pass
+
+    
         
-        
-    async def manualInit(self):
+    def manualInit(self):
         manInitTime = time.time()
-        print('Starting manual init of: {} at {}\n'.format(self.URL, time.time()))
-        await asyncio.sleep(1)
-        self.HTMLBody = await self.getHTMLPage(self.URL)
-        await asyncio.sleep(1)
-        self.parsePage(self.HTMLBody)
-        await asyncio.sleep(1)
+        print('Starting manual init of: {} on {} at {}\n'.format(self.URL, current_thread(), time.time()))
+        
+        loop = asyncio.new_event_loop()
+        asyncio.set_event_loop(loop)
+        loop.run_until_complete(
+            asyncio.gather(self.process_async_result(self.getHTMLPage))
+                                )    
+        loop.run_until_complete(self.parsePage(self.HTMLBody))
+        loop.close()
+        #self.HTMLBody = self.getHTMLPage(self.URL)
+        #self.parsePage(self.HTMLBody)
         self.createElementDict(self.parsedPage, self.elementDict)
-        await asyncio.sleep(1)
         self.bakeLinkDict(self.elementDict)
-        await asyncio.sleep(1)
         print('Finished async manual init of: {} at {}.\n It took {:.2f} seconds'.format(self.URL, time.time(), time.time() - manInitTime))
 
         return self
         
-    
+    async def process_async_result(self, async_function):
+        self.HTMLBody = await async_function(self.URL)
+        return    
+
         # test Diagnostics **Deprecated**
         #print(self.linkDict.get('15786855')) # prints a test that existed in the dict on 29 Nov.
         #print(self.getHeadline(self.linkDict.get('15806500')))

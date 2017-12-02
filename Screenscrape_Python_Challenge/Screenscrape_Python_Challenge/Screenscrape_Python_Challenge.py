@@ -10,22 +10,41 @@ from TestHTML import test_createElementDict
 from bs4 import BeautifulSoup
 
 def main():
-    URLlist = {0 : 'https://news.ycombinator.com/news', 1 : 'https://news.ycombinator.com/show', 2 : 'https://news.ycombinator.com/ask'}
-    pageDict = dict()
-    for item in URLlist:
-        pageDict[item] = HTMLPage(url = URLlist.get(item))
+
 
     loop = asyncio.get_event_loop()
-    loop.run_until_complete(
-        asyncio.gather(process_async_result(pageDict[0].manualInit),
-                       process_async_result(pageDict[1].manualInit),
-                       process_async_result(pageDict[2].manualInit))
-                            )
+    results = loop.run_until_complete(runBlockingTasks())
+    loop.close()
+    print(results)
+       
+   #deprecated this in favor of a multithreaded approach.
+    #asyncio.gather(process_async_result(pageDict[0].manualInit),
+         #              process_async_result(pageDict[1].manualInit),
+          #             process_async_result(pageDict[2].manualInit))
+           #                 )
 
     #for page in pageDict:
     #    print('\n\nPrinting contents of {}\n'.format(pageDict.get(page).URL))
     #    for item in pageDict.get(item).bakedDict:
     #        print(item)
+
+async def runBlockingTasks(executor = futures.ThreadPoolExecutor(max_workers = 3)):
+    URLlist = {0 : 'https://news.ycombinator.com/news', 1 : 'https://news.ycombinator.com/show', 2 : 'https://news.ycombinator.com/ask'}
+    pageDict = dict()
+    for item in URLlist:
+        pageDict[item] = HTMLPage(url = URLlist.get(item))
+    
+    loop = asyncio.get_event_loop()
+    
+    blockingTasks = [
+                     loop.run_in_executor(executor, pageDict[0].manualInit),
+                     loop.run_in_executor(executor, pageDict[1].manualInit),
+                     loop.run_in_executor(executor, pageDict[2].manualInit)
+                    ]
+    
+    completed, pending = await asyncio.wait(blockingTasks)
+    results = [t.result() for t in completed]
+    return results
 
 async def process_async_result(async_function):
     result = await async_function()
