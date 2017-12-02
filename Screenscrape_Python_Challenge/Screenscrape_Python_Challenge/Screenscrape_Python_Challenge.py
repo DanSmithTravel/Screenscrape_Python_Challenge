@@ -3,23 +3,45 @@
 # This application will scrape html element data from https://news.ycombinator.com/ and collate that data into a local text file.
 
 import asyncio, asyncore, argparse, urllib.request, http, sqlite3
+from concurrent import futures
 from HTMLPage import HTMLPage
 from TestHTML import test_parsePage, test_bakeLinkDict
 from TestHTML import test_createElementDict
 from bs4 import BeautifulSoup
 
 def main():
-        #page = HTMLPage(url = 'https://news.ycombinator.com/')
-        #page = HTMLPage(testmode = True, testmodeFile = 'testdata\SampleHTML.html', localexec = True)
-        #for item in page.bakedDict:
-        #    print(page.bakedDict[item])
-        generateTestData.generateParsedPage()
-        #x = open('testdata\ElementDictAnswerKey.txt', mode = 'w', encoding = 'utf-8')
-        #y = HTMLPage(testmode = True)
-        #y.parsePage(open('testdata\HTMLSampleAnswerKey.html'))
-        #y.createElementDict(y.parsedPage, y.elementDict)
-        #x.write(str(y.elementDict))
-        #x.close()
+    URLlist = {0 : 'https://news.ycombinator.com/news', 1 : 'https://news.ycombinator.com/show', 2 : 'https://news.ycombinator.com/ask'}
+    pageDict = dict()
+    for item in URLlist:
+        pageDict[item] = HTMLPage(url = URLlist.get(item))
+
+    loop = asyncio.get_event_loop()
+    loop.run_until_complete(
+        asyncio.gather(process_async_result(pageDict[0].manualInit),
+                       process_async_result(pageDict[1].manualInit),
+                       process_async_result(pageDict[2].manualInit))
+                            )
+
+    #for page in pageDict:
+    #    print('\n\nPrinting contents of {}\n'.format(pageDict.get(page).URL))
+    #    for item in pageDict.get(item).bakedDict:
+    #        print(item)
+
+async def process_async_result(async_function):
+    result = await async_function()
+    return result
+
+    #page = HTMLPage(url = 'https://news.ycombinator.com/')
+    #page = HTMLPage(testmode = True, testmodeFile = 'testdata\SampleHTML.html', localexec = True)
+    #for item in page.bakedDict:
+    #    print(page.bakedDict[item])
+    #generateTestData.generateParsedPage()
+    #x = open('testdata\ElementDictAnswerKey.txt', mode = 'w', encoding = 'utf-8')
+    #y = HTMLPage(testmode = True)
+    #y.parsePage(open('testdata\HTMLSampleAnswerKey.html'))
+    #y.createElementDict(y.parsedPage, y.elementDict)
+    #x.write(str(y.elementDict))
+    #x.close()
 
 class generateTestData():
     

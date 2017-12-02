@@ -1,4 +1,4 @@
-import io, asyncio, asyncore, argparse, urllib.request, http, re, unicodedata
+import io, asyncio, asyncore, argparse, urllib.request, http, re, unicodedata, time, aiohttp, async_timeout
 from bs4 import BeautifulSoup
 
 class HTMLPage:
@@ -7,7 +7,7 @@ class HTMLPage:
     In testmode, also pass in localexec(any value) to go ahead and automatically run the init methods with the passed file."""
 
 
-    def getHTMLPage(self, url = "", testmode = False, testmodeFile = ''):
+    async def getHTMLPage(self, url = "", testmode = False, testmodeFile = ''):
         """Gets an HTTP(s) page and returns an HTML object\r
         Pass in url only for live mode.\r
         Pass in testmode(any value) and testmodeFile(local HTML file) for testing."""
@@ -19,18 +19,28 @@ class HTMLPage:
             except Exception as e:
                 print(e)
 
-        else:
+        elif url != '':
             try:
-                return urllib.request.urlopen(url)
+                async with aiohttp.ClientSession() as session:
+                    html = await self.fetchPage(session, url, 5)
+                    return html
             
             except Exception as e:
                 print(e)
+        else:
+            raise Exception("No URL passed in live mode. Cannot retrieve any page.")
 
-    def parsePage(self, HTMLBody):
+
+    async def fetchPage(self, session, url, timeout = 10):
+        with async_timeout.timeout(timeout):
+            async with session.get(url) as response:
+                return await response.text()
+
+    def parsePage(self, HTMLBody, testmode = False):
         """parses the HTML body into a BeautifulSoup object."""
         
         try:
-            self.parsedPage = BeautifulSoup(HTMLBody.read(), 'html.parser')
+            self.parsedPage = BeautifulSoup(HTMLBody.read() if testmode else HTMLBody, 'html.parser')
         except Exception as e:
             print('There was an error trying to parse the page. Error:\n{}'.format(e)) #Diagnostic message
 
@@ -142,8 +152,11 @@ class HTMLPage:
         return str(ustring).replace(u"\u2018", "'").replace(u"\u2019", "'").replace(u'\xa0', " ").replace(u"\u2013", "-").replace(u"\u201C", "\"").replace(u"\u201D", "\"")
 
     def __init__(self, **kwargs):
+        self.startTime = time.time()
         self.elementDict = dict()
         self.bakedDict = dict()
+        self.URL = kwargs.get('url')
+        print('Regular init of: {} at {}'.format(self.URL, self.startTime))
 
         if 'testmode' in kwargs: # if testmode(any value) was passed in, run object in testing mode with local HTML from file.
             if 'localexec' in kwargs: # if localexec(any value) was passed in, go ahead and automatically run the init methods with the passed file.
@@ -155,11 +168,27 @@ class HTMLPage:
                 pass
 
         else: # assume this is a live execute and NOT in testmode or running unit tests
-            self.HTMLBody = self.getHTMLPage(kwargs.get('url'))
-            self.parsePage(self.HTMLBody)
-            self.createElementDict(self.parsedPage, self.elementDict)
-            self.bakeLinkDict(self.elementDict)
+            #self.URL = kwargs.get('url')
+            pass
         
+        
+    async def manualInit(self):
+        manInitTime = time.time()
+        print('Starting manual init of: {} at {}\n'.format(self.URL, time.time()))
+        await asyncio.sleep(1)
+        self.HTMLBody = await self.getHTMLPage(self.URL)
+        await asyncio.sleep(1)
+        self.parsePage(self.HTMLBody)
+        await asyncio.sleep(1)
+        self.createElementDict(self.parsedPage, self.elementDict)
+        await asyncio.sleep(1)
+        self.bakeLinkDict(self.elementDict)
+        await asyncio.sleep(1)
+        print('Finished async manual init of: {} at {}.\n It took {:.2f} seconds'.format(self.URL, time.time(), time.time() - manInitTime))
+
+        return self
+        
+    
         # test Diagnostics **Deprecated**
         #print(self.linkDict.get('15786855')) # prints a test that existed in the dict on 29 Nov.
         #print(self.getHeadline(self.linkDict.get('15806500')))
