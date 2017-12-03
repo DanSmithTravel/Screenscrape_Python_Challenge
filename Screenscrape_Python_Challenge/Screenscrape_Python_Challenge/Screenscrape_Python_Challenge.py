@@ -3,6 +3,7 @@
 # This application will scrape html element data from https://news.ycombinator.com/ and collate that data into a local text file.
 
 import asyncio, asyncore, argparse, urllib.request, http, sqlite3
+from operator import *
 from concurrent import futures
 from HTMLPage import HTMLPage
 from TestHTML import test_parsePage, test_bakeLinkDict
@@ -23,8 +24,33 @@ def main():
     loop = asyncio.get_event_loop()
     results = loop.run_until_complete(runBlockingTasks(pageDict)) # execute object actions asynchronously
     loop.close()
+
+    writeResultsToFile(results, 'output\output.txt')
+   
+
+def writeResultsToFile(results, filepath = 'output\output.txt', sortby = 'score'):
+    '''Write HTML page results to the passed in file. Overwrites previous data.'''
     
-    print(results)
+    fh = open(filepath, mode = 'w')
+    print('\nOpened {} for writing results.\n'.format(filepath)) # Diagnostic message
+    
+    for page in results: # Iterate through each page
+        print('Writing results sorted by {} from {} to file: {}.'.format(sortby, page.URL, filepath)) #Diagnostic message
+        try:
+            fh.write('###NEW SECTION###\n\n\nWriting sorted data for {}\nThe data is sorted by {}\n\n'.format(page.URL, 'not yet implemented, so sorted by score.')) # Write the section header with the page URL
+            for s in sorted(page.bakedDict.items(), key=lambda x:int(getitem(x[1],sortby))): # Use the Sorted function to help iterate through the Page's baked dictionary. Sorts using the passed in header.
+                #print(s[1]['headline']) #Diagnostic message
+                for linkData in s[1]: #Iterate through each link group in the baked dict.
+                    if linkData != 'URL' and linkData != 'id':  #Don't write the URL or the uniqueID to file.
+                        fh.write('{}: {}\n'.format(linkData, s[1].get(linkData))) # Write the key/value pair from the baked dictionary.
+                fh.write('\n') #spacer for readability.
+        except Exception as e:
+            print('Encountered an error. Moving on to the next page, if available. Error:')
+            print(e)
+            fh.close()
+
+    print('\nFinished writing to file. Seems we didn\'t encounter any errors!\n')
+    fh.close() #close the file when we're all done writing.
 
 
 async def runBlockingTasks(tasks, executor = futures.ThreadPoolExecutor()):
@@ -42,7 +68,7 @@ async def runBlockingTasks(tasks, executor = futures.ThreadPoolExecutor()):
 
 
 class generateTestData():
-    
+    '''Execute methods in this class to generate test data from a sample HTML file.'''
     def generateBakedLinkDict():
         try:
             dbm = db = sqlite3.connect('testdata/testingHTML.db')

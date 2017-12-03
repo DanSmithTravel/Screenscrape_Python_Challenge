@@ -89,13 +89,14 @@ class HTMLPage:
             except:
                 pass
 
-    def getPoints(self, element):
+    def getPoints(self, element, trim = True):
         """Search through all <span> tags in the link group element for the 'score' class. Extract the number of points."""
 
         for tag in element.find_all('span'):
             try:
                 if 'score' in tag.get('class'):
-                    return tag.next_element
+                    if trim: return re.search('\\d+', tag.next_element).group(0)
+                    else: return tag.next_element
 
             except:
                 pass
