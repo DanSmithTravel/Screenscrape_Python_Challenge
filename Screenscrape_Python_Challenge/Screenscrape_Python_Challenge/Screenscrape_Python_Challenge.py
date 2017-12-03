@@ -3,23 +3,43 @@
 # This application will scrape html element data from https://news.ycombinator.com/ and collate that data into a local text file.
 
 import asyncio, asyncore, argparse, urllib.request, http, sqlite3
+from concurrent import futures
 from HTMLPage import HTMLPage
 from TestHTML import test_parsePage, test_bakeLinkDict
 from TestHTML import test_createElementDict
 from bs4 import BeautifulSoup
 
 def main():
-        #page = HTMLPage(url = 'https://news.ycombinator.com/')
-        #page = HTMLPage(testmode = True, testmodeFile = 'testdata\SampleHTML.html', localexec = True)
-        #for item in page.bakedDict:
-        #    print(page.bakedDict[item])
-        generateTestData.generateParsedPage()
-        #x = open('testdata\ElementDictAnswerKey.txt', mode = 'w', encoding = 'utf-8')
-        #y = HTMLPage(testmode = True)
-        #y.parsePage(open('testdata\HTMLSampleAnswerKey.html'))
-        #y.createElementDict(y.parsedPage, y.elementDict)
-        #x.write(str(y.elementDict))
-        #x.close()
+    
+#    HTMLPage(testmode = True, testmodeFile = 'testdata\SampleHTML.html', localexec = True) # testmode localexec
+
+    URLlist = {0 : 'https://news.ycombinator.com/news', 1 : 'https://news.ycombinator.com/show', 2 : 'https://news.ycombinator.com/ask'}
+    pageDict = dict()
+
+    #initialize our objects
+    for index in URLlist:
+        pageDict[index] = HTMLPage(url = URLlist.get(index))
+
+    loop = asyncio.get_event_loop()
+    results = loop.run_until_complete(runBlockingTasks(pageDict)) # execute object actions asynchronously
+    loop.close()
+    
+    print(results)
+
+
+async def runBlockingTasks(tasks, executor = futures.ThreadPoolExecutor()):
+    """Executes object initialization asynchronously and builds a dictionary of completed objects to return."""
+        
+    loop = asyncio.get_event_loop() # Get the event loop
+    
+    blockingTasks = [ # run each task in a new thread
+                     loop.run_in_executor(executor, tasks[i].manualInit) for i in tasks
+                    ]
+    
+    completed, pending = await asyncio.wait(blockingTasks) # Wait for all tasks to complete. Put them in "completed"
+    results = [t.result() for t in completed] # Pull the result object from the returned future. Add it to the results dictionary.
+    return results
+
 
 class generateTestData():
     
