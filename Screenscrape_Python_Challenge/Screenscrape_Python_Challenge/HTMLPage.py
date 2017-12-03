@@ -8,7 +8,7 @@ class HTMLPage:
     In testmode, also pass in localexec(any value) to go ahead and automatically run the init methods with the passed file."""
 
 
-    async def getHTMLPage(self, url = "", testmode = False, testmodeFile = ''):
+    async def getHTMLPage(self, url = None, testmode = False, testmodeFile = ''):
         """Gets an HTTP(s) page and returns an HTML object\r
         Pass in url only for live mode.\r
         Pass in testmode(any value) and testmodeFile(local HTML file) for testing."""
@@ -155,59 +155,64 @@ class HTMLPage:
         return str(ustring).replace(u"\u2018", "'").replace(u"\u2019", "'").replace(u'\xa0', " ").replace(u"\u2013", "-").replace(u"\u201C", "\"").replace(u"\u201D", "\"")
 
     def __init__(self, **kwargs):
+        #initialize variables and print diagnostic trace
         self.startTime = time.time()
         self.elementDict = dict()
         self.bakedDict = dict()
-        self.URL = kwargs.get('url')
-        print('Regular init of: {} at {}'.format(self.URL, self.startTime))
+        
+        try:
+            self.URL = kwargs['url'] # See if we're in testmode or not. and pull the URL if we are.
+            print('HTMLPage Object {} created at {}\n'.format(self.URL, time.time()))
+        except Exception as e:
+            print('No URL passed. we might be in testmode.\nTestmode: {}'.format('testmode' in kwargs))
+            if 'testmode' not in kwargs: raise Exception('Error: No URL passed to object, but we\'re not in test mode!. Exception:\n{}'.format(e))
+            else: pass # test for testmode below.
 
+        
         if 'testmode' in kwargs: # if testmode(any value) was passed in, run object in testing mode with local HTML from file.
+            print('HTMLPage Object {} created at {}\n'.format(kwargs.get('testmodeFile'), time.time()))
             if 'localexec' in kwargs: # if localexec(any value) was passed in, go ahead and automatically run the init methods with the passed file.
-                self.HTMLBody = self.getHTMLPage(testmode = True, testmodeFile = kwargs['testmodeFile'])
-                self.parsePage(self.HTMLBody)
-                self.createElementDict(self.parsedPage, self.elementDict)
-                self.bakeLinkDict(self.elementDict)
+                loop = asyncio.new_event_loop() # generate a new loop in case we're already executing in one.
+                asyncio.set_event_loop(loop) # set the new loop
+                
+                # get the HTML page in async testmode
+                loop.run_until_complete(
+                    asyncio.gather(self.process_async_HTMLBody(self.getHTMLPage, testmode = True, testmodeFile = kwargs['testmodeFile']))
+                                )
+                loop.run_until_complete(self.parsePage(self.HTMLBody)) # parse the page async
+                loop.close() # loop no longer needed. close it.
+
+                self.createElementDict(self.parsedPage, self.elementDict) # create a dictionary of the link group objects from the page
+                self.bakeLinkDict(self.elementDict) # bake the link dict into plain text for printing
             else:
                 pass
-
+#
         else: # assume this is a live execute and NOT in testmode or running unit tests
-            #self.URL = kwargs.get('url')
             pass
 
     
         
-    def manualInit(self):
+    def manualInit(self): #Build out object 
         manInitTime = time.time()
-        print('Starting manual init of: {} on {} at {}\n'.format(self.URL, current_thread(), time.time()))
+        print('Starting manual init of: {} on thread {} at {}\n'.format(self.URL, current_thread(), manInitTime))
         
-        loop = asyncio.new_event_loop()
-        asyncio.set_event_loop(loop)
+        loop = asyncio.new_event_loop() # generate a new loop in case we're already executing in one.
+        asyncio.set_event_loop(loop) # set the new loop
         loop.run_until_complete(
-            asyncio.gather(self.process_async_result(self.getHTMLPage))
+            asyncio.gather(self.process_async_HTMLBody(self.getHTMLPage))
                                 )    
-        loop.run_until_complete(self.parsePage(self.HTMLBody))
-        loop.close()
-        #self.HTMLBody = self.getHTMLPage(self.URL)
-        #self.parsePage(self.HTMLBody)
-        self.createElementDict(self.parsedPage, self.elementDict)
-        self.bakeLinkDict(self.elementDict)
+        loop.run_until_complete(self.parsePage(self.HTMLBody)) # parse the page async
+        loop.close() # loop no longer needed. close it.
+
+        self.createElementDict(self.parsedPage, self.elementDict) # create a dictionary of the link group objects from the page
+        self.bakeLinkDict(self.elementDict) # bake the link dict into plain text for printing
         print('Finished async manual init of: {} at {}.\n It took {:.2f} seconds'.format(self.URL, time.time(), time.time() - manInitTime))
 
         return self
         
-    async def process_async_result(self, async_function):
-        self.HTMLBody = await async_function(self.URL)
+    async def process_async_HTMLBody(self, async_function, testmode = False, testmodeFile = None):
+        if testmode:
+            self.HTMLBody = await async_function(testmode = testmode, testmodeFile = testmodeFile)
+        else:
+            self.HTMLBody = await async_function(url = self.URL)
         return    
-
-        # test Diagnostics **Deprecated**
-        #print(self.linkDict.get('15786855')) # prints a test that existed in the dict on 29 Nov.
-        #print(self.getHeadline(self.linkDict.get('15806500')))
-        #print(self.getURL(self.linkDict.get('15807913')))
-        #print('Score of this link is {}'.format(self.getPoints(self.linkDict.get('15807913'))))
-        #print('Authored by: {}'.format(self.getAuthor(self.linkDict.get('15807913-data'))))
-        #print('Posted {}'.format(self.getAge(self.linkDict.get('15807913-data'))))
-        #print(self.getNumComments(self.linkDict.get('15807913-data'), self.linkDict.get('15807913')))
-#        
-        
-#        print(self.parsedPage.title)
-#        print(str(self.parsedPage.contents).encode('utf-8'))

@@ -10,57 +10,36 @@ from TestHTML import test_createElementDict
 from bs4 import BeautifulSoup
 
 def main():
+    
+#    HTMLPage(testmode = True, testmodeFile = 'testdata\SampleHTML.html', localexec = True) # testmode localexec
 
-
-    loop = asyncio.get_event_loop()
-    results = loop.run_until_complete(runBlockingTasks())
-    loop.close()
-    print(results)
-       
-   #deprecated this in favor of a multithreaded approach.
-    #asyncio.gather(process_async_result(pageDict[0].manualInit),
-         #              process_async_result(pageDict[1].manualInit),
-          #             process_async_result(pageDict[2].manualInit))
-           #                 )
-
-    #for page in pageDict:
-    #    print('\n\nPrinting contents of {}\n'.format(pageDict.get(page).URL))
-    #    for item in pageDict.get(item).bakedDict:
-    #        print(item)
-
-async def runBlockingTasks(executor = futures.ThreadPoolExecutor(max_workers = 3)):
     URLlist = {0 : 'https://news.ycombinator.com/news', 1 : 'https://news.ycombinator.com/show', 2 : 'https://news.ycombinator.com/ask'}
     pageDict = dict()
-    for item in URLlist:
-        pageDict[item] = HTMLPage(url = URLlist.get(item))
-    
+
+    #initialize our objects
+    for index in URLlist:
+        pageDict[index] = HTMLPage(url = URLlist.get(index))
+
     loop = asyncio.get_event_loop()
+    results = loop.run_until_complete(runBlockingTasks(pageDict)) # execute object actions asynchronously
+    loop.close()
     
-    blockingTasks = [
-                     loop.run_in_executor(executor, pageDict[0].manualInit),
-                     loop.run_in_executor(executor, pageDict[1].manualInit),
-                     loop.run_in_executor(executor, pageDict[2].manualInit)
+    print(results)
+
+
+async def runBlockingTasks(tasks, executor = futures.ThreadPoolExecutor()):
+    """Executes object initialization asynchronously and builds a dictionary of completed objects to return."""
+        
+    loop = asyncio.get_event_loop() # Get the event loop
+    
+    blockingTasks = [ # run each task in a new thread
+                     loop.run_in_executor(executor, tasks[i].manualInit) for i in tasks
                     ]
     
-    completed, pending = await asyncio.wait(blockingTasks)
-    results = [t.result() for t in completed]
+    completed, pending = await asyncio.wait(blockingTasks) # Wait for all tasks to complete. Put them in "completed"
+    results = [t.result() for t in completed] # Pull the result object from the returned future. Add it to the results dictionary.
     return results
 
-async def process_async_result(async_function):
-    result = await async_function()
-    return result
-
-    #page = HTMLPage(url = 'https://news.ycombinator.com/')
-    #page = HTMLPage(testmode = True, testmodeFile = 'testdata\SampleHTML.html', localexec = True)
-    #for item in page.bakedDict:
-    #    print(page.bakedDict[item])
-    #generateTestData.generateParsedPage()
-    #x = open('testdata\ElementDictAnswerKey.txt', mode = 'w', encoding = 'utf-8')
-    #y = HTMLPage(testmode = True)
-    #y.parsePage(open('testdata\HTMLSampleAnswerKey.html'))
-    #y.createElementDict(y.parsedPage, y.elementDict)
-    #x.write(str(y.elementDict))
-    #x.close()
 
 class generateTestData():
     
