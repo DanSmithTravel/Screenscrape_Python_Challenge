@@ -10,17 +10,17 @@ author: erkanerol
 age: 7 hours ago
 comments: None
 
-headline: iOS 11.2: Calculator bug 1+2+3=234
-score: 3
-author: vijaysr
-age: 32 minutes ago
-comments: None
-
 headline: Best Hacker News client for iOS?
 score: 3
 author: qubex
 age: 1 hour ago
 comments: 2
+
+headline: iOS 11.2: Calculator bug 1+2+3=234
+score: 4
+author: vijaysr
+age: 49 minutes ago
+comments: None
 
 headline: Ask HN: What about women on HN?
 score: 4
@@ -37,7 +37,7 @@ comments: None
 headline: Polyglot programming communities
 score: 4
 author: avrmav
-age: 20 hours ago
+age: 21 hours ago
 comments: 3
 
 headline: Ask HN: What technologies and programming paradigms are underused?
@@ -157,7 +157,7 @@ comments: 69
 headline: Ask HN: What are the big differences working at a startup, bigco, old smallco?
 score: 86
 author: aniijbod
-age: 21 hours ago
+age: 22 hours ago
 comments: 40
 
 headline: Ask HN: What coding challenge sites should I try next?
@@ -170,7 +170,7 @@ headline: Ask HN: Time Management Tricks and Tips
 score: 191
 author: wasi0013
 age: 1 day ago
-comments: 72
+comments: 73
 
 headline: Ask HN: Is there a fitness wristband that is hackable?
 score: 191
@@ -182,7 +182,7 @@ headline: Ask HN: Who is hiring? (December 2017)
 score: 570
 author: whoishiring
 age: 2 days ago
-comments: 811
+comments: 812
 
 ###NEW SECTION###
 
@@ -199,7 +199,7 @@ comments: None
 headline: Show HN: Move GitHub issues between repositories
 score: 3
 author: dessant
-age: 23 hours ago
+age: 1 day ago
 comments: None
 
 headline: Show HN: Safe key exchange for multiple parties
@@ -217,7 +217,7 @@ comments: None
 headline: Show HN: 8chen - A New Hacker News Client for iOS
 score: 4
 author: 8chen
-age: 22 hours ago
+age: 23 hours ago
 comments: None
 
 headline: Show HN: Quick & dirty Python-to-Javascript syntax converter
@@ -293,22 +293,22 @@ age: 4 days ago
 comments: 19
 
 headline: Show HN: Graph Playground - Make Graphs/Networks and run Algorithms
-score: 37
+score: 39
 author: mikedombo
 age: 12 hours ago
 comments: 7
-
-headline: Show HN: Breach Insider - Detect a data breach using realistic pseudo-users
-score: 39
-author: graystevens
-age: 10 hours ago
-comments: 25
 
 headline: Show HN: Search for BibTeX references from your terminal
 score: 40
 author: ekmartin
 age: 2 days ago
 comments: 11
+
+headline: Show HN: Breach Insider - Detect a data breach using realistic pseudo-users
+score: 41
+author: graystevens
+age: 10 hours ago
+comments: 25
 
 headline: Show HN: Computation at Compile-Time now free online
 score: 57
@@ -334,17 +334,17 @@ author: flaque
 age: 2 days ago
 comments: 28
 
-headline: Show HN: Freeciv WebGL 3D
-score: 93
-author: roschdal
-age: 1 day ago
-comments: 15
-
 headline: Show HN: Angelic-hierarchy, a game about Turing machines, philosophy, and math
 score: 94
 author: modalduality
 age: 4 days ago
 comments: 20
+
+headline: Show HN: Freeciv WebGL 3D
+score: 95
+author: roschdal
+age: 1 day ago
+comments: 15
 
 headline: Show HN: Ondevice SSH - Terminal emulator for devices without public IP address
 score: 152
@@ -377,88 +377,70 @@ Writing sorted data for https://news.ycombinator.com/news
 The data is sorted by not yet implemented, so sorted by score.
 
 headline: The digital hippies want to integrate life and work - but not in a good way
-score: 4
+score: 6
 author: Futurebot
 age: 1 hour ago
 comments: None
 
-headline: People Are Getting Robocalls About Their "Derogatory" Trump Posts
-score: 8
-author: fraqed
-age: 18 minutes ago
-comments: None
-
-headline: It's Gonna Get a Lot Easier to Break Science Journal Paywalls
-score: 11
-author: stablemap
-age: 1 hour ago
-comments: None
-
 headline: 2KB JavaScript animation library
-score: 12
+score: 14
 author: benjamindc
 age: 6 hours ago
 comments: 8
 
-headline: Add Honest Achmed's root certificate to Mozilla CA root store
-score: 16
-author: Shoothe
-age: 29 minutes ago
-comments: 2
+headline: It's Gonna Get a Lot Easier to Break Science Journal Paywalls
+score: 15
+author: stablemap
+age: 1 hour ago
+comments: None
 
 headline: Show HN: Graph Playground - Make Graphs/Networks and run Algorithms
-score: 37
+score: 39
 author: mikedombo
 age: 12 hours ago
 comments: 7
 
 headline: Show HN: Breach Insider - Detect a data breach using realistic pseudo-users
-score: 39
+score: 41
 author: graystevens
 age: 10 hours ago
 comments: 25
 
 headline: A TensorFlow Implementation of Baidu's DeepSpeech Architecture
-score: 61
+score: 64
 author: rhakmi
 age: 4 hours ago
-comments: 11
-
-headline: Dice Become Ordered When Stirred, Not Shaken
-score: 70
-author: ingve
-age: 2 hours ago
-comments: 23
-
-headline: Randomize your WiFi MAC address on Ubuntu 16.04
-score: 71
-author: paulfurley
-age: 5 hours ago
-comments: 29
+comments: 13
 
 headline: Books from Phoenix Inside Out series
-score: 72
+score: 73
 author: pvsukale3
 age: 6 hours ago
 comments: 21
 
+headline: Dice Become Ordered When Stirred, Not Shaken
+score: 74
+author: ingve
+age: 2 hours ago
+comments: 26
+
 headline: Normalization of deviance in software: how broken practices become standard
-score: 72
+score: 74
 author: sidcool
 age: 13 hours ago
-comments: 11
+comments: 12
+
+headline: Randomize your WiFi MAC address on Ubuntu 16.04
+score: 75
+author: paulfurley
+age: 5 hours ago
+comments: 35
 
 headline: Where People Spend the Most and Least on Rent in America
-score: 73
+score: 75
 author: emberdev
 age: 5 hours ago
-comments: 65
-
-headline: How to respond when you are asked for an estimate?
-score: 86
-author: lainon
-age: 3 hours ago
-comments: 33
+comments: 68
 
 headline: Behind the Scenes at Xerox Parc's Futures Day - 40 Years Ago
 score: 86
@@ -467,31 +449,43 @@ age: 16 hours ago
 comments: 12
 
 headline: MyRocks - A RocksDB storage engine with MySQL
-score: 89
+score: 90
 author: guifortaine
-age: 16 hours ago
-comments: 40
+age: 17 hours ago
+comments: 41
 
 headline: Termination of StartCom business
-score: 90
+score: 92
 author: pferde
 age: 8 hours ago
 comments: 35
 
+headline: How to respond when you are asked for an estimate?
+score: 94
+author: lainon
+age: 4 hours ago
+comments: 40
+
+headline: A faster way to make Bose-Einstein condensates
+score: 95
+author: CarolineW
+age: 22 hours ago
+comments: 14
+
 headline: Amazon Macie: A machine learning service to discover and protect sensitive data
-score: 102
+score: 104
 author: polygot
 age: 16 hours ago
-comments: 22
+comments: 23
 
 headline: What Was Once Hailed as First U.S. Offshore Wind Farm Is No More
-score: 107
+score: 108
 author: protomyth
-age: 16 hours ago
-comments: 55
+age: 17 hours ago
+comments: 56
 
 headline: A primer on Elixir Stream
-score: 109
+score: 111
 author: wooola
 age: 14 hours ago
 comments: 2
@@ -502,38 +496,38 @@ author: michaelmwangi
 age: 23 hours ago
 comments: 37
 
-headline: A Secretly Detained American Has Asked for a Lawyer - But Gov Won't Give Him One
-score: 173
-author: gehwartzen
-age: 10 hours ago
-comments: 79
-
 headline: Fast desktop-scale extrusion 3D printing
 score: 174
 author: lainon
 age: 1 day ago
 comments: 81
 
-headline: Find every domain someone owns automatically
+headline: A Secretly Detained American Has Asked for a Lawyer - But Gov Won't Give Him One
 score: 179
+author: gehwartzen
+age: 11 hours ago
+comments: 82
+
+headline: Find every domain someone owns automatically
+score: 182
 author: tzury
 age: 15 hours ago
 comments: 95
 
-headline: A Generation Lost in the Bazaar
-score: 192
-author: rendx
-age: 7 hours ago
-comments: 74
-
 headline: Google API Explorer
-score: 192
+score: 193
 author: tzury
 age: 20 hours ago
 comments: 34
 
+headline: A Generation Lost in the Bazaar (2012)
+score: 198
+author: rendx
+age: 7 hours ago
+comments: 79
+
 headline: William Alsup, the coding judge who decides tech cases
-score: 206
+score: 208
 author: nkurz
 age: 18 hours ago
 comments: 34
@@ -548,11 +542,17 @@ headline: If your iOS 11 device unexpectedly restarts repeatedly on or after Dec
 score: 229
 author: rosstex
 age: 1 day ago
-comments: 120
+comments: 121
 
 headline: Maintaining an Independent Browser Is Expensive
-score: 323
+score: 326
 author: jonchang
 age: 12 hours ago
-comments: 199
+comments: 203
+
+headline: Django 2.0 released
+score: 583
+author: Hangya
+age: 1 day ago
+comments: 151
 

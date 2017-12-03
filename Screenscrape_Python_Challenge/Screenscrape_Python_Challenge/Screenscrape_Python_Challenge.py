@@ -13,7 +13,7 @@ from bs4 import BeautifulSoup
 def main():
     
 #    HTMLPage(testmode = True, testmodeFile = 'testdata\SampleHTML.html', localexec = True) # testmode localexec
-
+    
     URLlist = {0 : 'https://news.ycombinator.com/news', 1 : 'https://news.ycombinator.com/show', 2 : 'https://news.ycombinator.com/ask'}
     pageDict = dict()
 
@@ -82,6 +82,10 @@ class generateTestData():
             # generate data objects 
             y = HTMLPage(testmode = True)
             y.parsePage(open('testdata\HTMLSampleAnswerKey.html'))
+            loop = asyncio.new_event_loop() # generate a new loop in case we're already executing in one.
+            asyncio.set_event_loop(loop) # set the new loop
+            loop.run_until_complete(y.parsePage(open('testdata\SampleHTML.html'), testmode = True)) # parse the page async
+            loop.close() # loop no longer needed. close it.
             y.createElementDict(y.parsedPage, y.elementDict)
             y.bakeLinkDict(y.elementDict)
             # pull out element data and store it in the table.
