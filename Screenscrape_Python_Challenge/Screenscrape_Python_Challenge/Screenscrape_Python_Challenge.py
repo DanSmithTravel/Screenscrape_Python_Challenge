@@ -13,14 +13,16 @@ from bs4 import BeautifulSoup
 def main():
     
 #    HTMLPage(testmode = True, testmodeFile = 'testdata\SampleHTML.html', localexec = True) # testmode localexec
-    
+
     #get command line arguments and define the sort order to be used.
     validArgs = ('rank', 'id', 'score', 'age', 'comments')
     cmdArgs = getCmdArgs(validArgs)
     if any(x in cmdArgs.sortOrder for x in validArgs): pass
     else: cmdArgs.sortOrder = 'score' # set the default sort order to 'score'
     
-    URLlist = {0 : 'https://news.ycombinator.com/news', 1 : 'https://news.ycombinator.com/show', 2 : 'https://news.ycombinator.com/ask'} # define the list of URLs to scrape.
+    # define the list of URLs to scrape.
+    URLlist = {0 : 'https://news.ycombinator.com/news', 1 : 'https://news.ycombinator.com/show', 2 : 'https://news.ycombinator.com/ask'}
+    
     # Initialize a dictionary of blank pages.
     pageDict = dict()
     for index in URLlist:
@@ -44,18 +46,18 @@ def getCmdArgs(validArgs):
 def writeResultsToFile(results, filepath = 'output\output.txt', sortOrder = 'score'):
     '''Write HTML page results to the passed in file. Overwrites previous data. Create a new file if the existing file is locked.'''
     
-    try:
+    try: # Try to open the passed in file
         fh = open(filepath, mode = 'w')
         print('\nOpened {} for writing results.\n'.format(filepath)) # Diagnostic message
     except Exception as e:
-        newfilepath = '{}.new{}'.format(re.search('.*?.[^.]*', filepath).group(0), re.search('[.].+', filepath).group(0))
-        print('Couldn\'t seem to open the file for writing. Maybe it\'s in use?. Trying to create a new file instead at {}'.format(newfilepath))
+        newfilepath = '{}.new{}'.format(re.search('.*?.[^.]*', filepath).group(0), re.search('[.].+', filepath).group(0)) # create a new filepath. Insert '.new' before the existing file extension.
+        print('Couldn\'t seem to open the file for writing. Maybe it\'s in use?. Trying to create a new file instead at {}'.format(newfilepath)) # Diagnostic message
+        filepath = newfilepath
         try:
-            filepath = newfilepath
-            fh = open(filepath, mode = 'w+')
+            fh = open(filepath, mode = 'w+') #try to open the new file in write-create mode.
             
-        except:
-            raise Exception('Could create the new file at {}!'.format(newfilepath))
+        except Exception as e:
+            raise Exception('Could create the new file at {}!\nError: {}'.format(newfilepath), e)
     
     for page in results: # Iterate through each page
         print('Writing results sorted by {} from {} to file: {}.'.format(sortOrder, page.URL, filepath)) #Diagnostic message

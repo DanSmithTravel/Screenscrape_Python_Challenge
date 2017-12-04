@@ -47,7 +47,6 @@ class HTMLPage:
         except Exception as e:
             print('There was an error trying to parse the page. Error:\n{}'.format(e)) #Diagnostic message
 
-
     def createElementDict(self, parsedPage, dictionary): 
         """create a dictionary of all link groups on the HTML page"""
                 
@@ -169,7 +168,7 @@ class HTMLPage:
         self.bakedDict = dict()
         
         try:
-            self.URL = kwargs['url'] # See if we're in testmode or not. and pull the URL if we are.
+            self.URL = kwargs['url'] # See if we're in testmode or not and pull the URL if we are.
             print('HTMLPage Object {} created at {}\n'.format(self.URL, time.time()))
         except Exception as e:
             print('No URL passed. we might be in testmode.\nTestmode: {}'.format('testmode' in kwargs))
@@ -194,7 +193,7 @@ class HTMLPage:
                 self.bakeLinkDict(self.elementDict) # bake the link dict into plain text for printing
             else:
                 pass
-#
+
         else: # assume this is a live execute and NOT in testmode or running unit tests
             pass
 
