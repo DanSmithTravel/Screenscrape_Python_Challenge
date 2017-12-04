@@ -200,7 +200,8 @@ class HTMLPage:
 
     
         
-    def manualInit(self): #Build out object 
+    def manualInit(self):
+        '''Build out object, including HTTP request and baking the link dictionary.'''
         manInitTime = time.time()
         print('Starting manual init of: {} on thread {} at {}\n'.format(self.URL, current_thread(), manInitTime))
         

@@ -2,7 +2,7 @@
 # Developed by Daniel Smith
 # This application will scrape html element data from https://news.ycombinator.com/ and collate that data into a local text file.
 
-import asyncio, asyncore, argparse, urllib.request, http, sqlite3
+import asyncio, asyncore, argparse, urllib.request, http, sqlite3, re
 from operator import *
 from concurrent import futures
 from HTMLPage import HTMLPage
@@ -18,33 +18,44 @@ def main():
     validArgs = ('rank', 'id', 'score', 'age', 'comments')
     cmdArgs = getCmdArgs(validArgs)
     if any(x in cmdArgs.sortOrder for x in validArgs): pass
-    else: cmdArgs.sortOrder = 'score'
-    #print(cmdArgs.sortOrder) # diagnostic message
-
-    URLlist = {0 : 'https://news.ycombinator.com/news', 1 : 'https://news.ycombinator.com/show', 2 : 'https://news.ycombinator.com/ask'}
+    else: cmdArgs.sortOrder = 'score' # set the default sort order to 'score'
+    
+    URLlist = {0 : 'https://news.ycombinator.com/news', 1 : 'https://news.ycombinator.com/show', 2 : 'https://news.ycombinator.com/ask'} # define the list of URLs to scrape.
+    # Initialize a dictionary of blank pages.
     pageDict = dict()
-
-    #initialize our objects
     for index in URLlist:
         pageDict[index] = HTMLPage(url = URLlist.get(index))
 
+    #populate all the pages in the page dictionary
     loop = asyncio.get_event_loop()
     results = loop.run_until_complete(runBlockingTasks(pageDict)) # execute object actions asynchronously
     loop.close()
 
+    #Write everything to file using the sort order specified by the command line args.
     writeResultsToFile(results, 'output\output.txt', sortOrder = cmdArgs.sortOrder)
    
 def getCmdArgs(validArgs):
+    '''Pulls commmand line arguments and returns the parsed object.'''
     parser = argparse.ArgumentParser()
     parser.add_argument('-s', action = 'store', dest = 'sortOrder', help = 'Specify the sort order. Defaults to \'score\' Acceptable values are: {}'.format(validArgs))
     return parser.parse_args()
     
 
 def writeResultsToFile(results, filepath = 'output\output.txt', sortOrder = 'score'):
-    '''Write HTML page results to the passed in file. Overwrites previous data.'''
+    '''Write HTML page results to the passed in file. Overwrites previous data. Create a new file if the existing file is locked.'''
     
-    fh = open(filepath, mode = 'w')
-    print('\nOpened {} for writing results.\n'.format(filepath)) # Diagnostic message
+    try:
+        fh = open(filepath, mode = 'w')
+        print('\nOpened {} for writing results.\n'.format(filepath)) # Diagnostic message
+    except Exception as e:
+        newfilepath = '{}.new{}'.format(re.search('.*?.[^.]*', filepath).group(0), re.search('[.].+', filepath).group(0))
+        print('Couldn\'t seem to open the file for writing. Maybe it\'s in use?. Trying to create a new file instead at {}'.format(newfilepath))
+        try:
+            filepath = newfilepath
+            fh = open(filepath, mode = 'w+')
+            
+        except:
+            raise Exception('Could create the new file at {}!'.format(newfilepath))
     
     for page in results: # Iterate through each page
         print('Writing results sorted by {} from {} to file: {}.'.format(sortOrder, page.URL, filepath)) #Diagnostic message
@@ -61,7 +72,7 @@ def writeResultsToFile(results, filepath = 'output\output.txt', sortOrder = 'sco
             print(e)
             #fh.close()
 
-    print('\nFinished writing to file. Seems we didn\'t encounter any errors!\n')
+    print('\nFinished writing to file.\n')
     fh.close() #close the file when we're all done writing.
 
 
