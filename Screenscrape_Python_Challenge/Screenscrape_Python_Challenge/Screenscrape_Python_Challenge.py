@@ -38,7 +38,7 @@ def writeResultsToFile(results, filepath = 'output\output.txt', sortby = 'score'
         print('Writing results sorted by {} from {} to file: {}.'.format(sortby, page.URL, filepath)) #Diagnostic message
         try:
             fh.write('###NEW SECTION###\n\n\nWriting sorted data for {}\nThe data is sorted by {}\n\n'.format(page.URL, 'not yet implemented, so sorted by score.')) # Write the section header with the page URL
-            for s in sorted(page.bakedDict.items(), key=lambda x:int(getitem(x[1],sortby))): # Use the Sorted function to help iterate through the Page's baked dictionary. Sorts using the passed in header.
+            for s in sorted(page.bakedDict.items(), key=lambda x:int(0 if getitem(x[1],sortby) == None else getitem(x[1],sortby))): # Use the Sorted function to help iterate through the Page's baked dictionary. Sorts using the passed in header.
                 #print(s[1]['headline']) #Diagnostic message
                 for linkData in s[1]: #Iterate through each link group in the baked dict.
                     if linkData != 'URL' and linkData != 'id':  #Don't write the URL or the uniqueID to file.
@@ -47,7 +47,7 @@ def writeResultsToFile(results, filepath = 'output\output.txt', sortby = 'score'
         except Exception as e:
             print('Encountered an error. Moving on to the next page, if available. Error:')
             print(e)
-            fh.close()
+            #fh.close()
 
     print('\nFinished writing to file. Seems we didn\'t encounter any errors!\n')
     fh.close() #close the file when we're all done writing.

@@ -1,223 +1,25 @@
 ###NEW SECTION###
 
 
-Writing sorted data for https://news.ycombinator.com/ask
-The data is sorted by not yet implemented, so sorted by score.
-
-headline: Ask HN: Resource recommendations for "Everything about concurrency" presentation
-score: 2
-author: erkanerol
-age: 7 hours ago
-comments: None
-
-headline: Best Hacker News client for iOS?
-score: 3
-author: qubex
-age: 1 hour ago
-comments: 2
-
-headline: iOS 11.2: Calculator bug 1+2+3=234
-score: 4
-author: vijaysr
-age: 49 minutes ago
-comments: None
-
-headline: Ask HN: What about women on HN?
-score: 4
-author: baxtr
-age: 8 hours ago
-comments: 11
-
-headline: Ask HN: Any good resources for learning back-end tech as a front-end engineer?
-score: 4
-author: aalleavitch
-age: 14 hours ago
-comments: None
-
-headline: Polyglot programming communities
-score: 4
-author: avrmav
-age: 21 hours ago
-comments: 3
-
-headline: Ask HN: What technologies and programming paradigms are underused?
-score: 5
-author: entelechy
-age: 16 hours ago
-comments: 4
-
-headline: Ask HN: Separate Logic from IO
-score: 5
-author: truth_seeker
-age: 1 day ago
-comments: 4
-
-headline: Ask HN: Open source software for tracking financial account balances?
-score: 6
-author: dplgk
-age: 17 hours ago
-comments: None
-
-headline: Ask HN: Is it still feasible for international students to apply to SV?
-score: 6
-author: karimf
-age: 1 day ago
-comments: None
-
-headline: I'm in withdrawal from giving up YouTube. What websites do you check daily?
-score: 10
-author: danschumann
-age: 2 days ago
-comments: 15
-
-headline: Ask HN: What are the best books to (re)discover philosophy?
-score: 11
-author: simonebrunozzi
-age: 10 hours ago
-comments: 6
-
-headline: Ask HN: What is your software specialization and what's interesting about it?
-score: 12
-author: skellera
-age: 1 day ago
-comments: 5
-
-headline: Ask HN: Favorite product roadmaps?
-score: 13
-author: muzani
-age: 2 days ago
-comments: None
-
-headline: Ask HN: Is whitelabeling your software a good idea?
-score: 14
-author: pixelfeeder
-age: 17 hours ago
-comments: 4
-
-headline: Ask HN: What do you wear to work everyday?
-score: 20
-author: meagher
-age: 2 days ago
-comments: 30
-
-headline: Ask HN: Best time series database currently
-score: 20
-author: mads
-age: 3 days ago
-comments: 16
-
-headline: Ask HN: What about the software industry in Iran?
-score: 26
-author: erkanerol
-age: 16 hours ago
-comments: 7
-
-headline: Ask HN: Traveling to China for the first time. Would love some advice
-score: 27
-author: neya
-age: 3 days ago
-comments: 32
-
-headline: Ask HN: How do you recover from burnout?
-score: 32
-author: togusa2017
-age: 2 days ago
-comments: 21
-
-headline: Ask HN: What free services can I use for a back-end?
-score: 34
-author: ateesdalejr
-age: 4 days ago
-comments: 21
-
-headline: Ask HN: Good resources on learning how docker works under the hood?
-score: 48
-author: mohitmun
-age: 2 days ago
-comments: 15
-
-headline: Ask HN: Best internal tools your startup built?
-score: 48
-author: tramGG
-age: 4 days ago
-comments: 18
-
-headline: Ask HN: At your company, what things do you want to outsource but can't?
-score: 49
-author: stretchwithme
-age: 1 day ago
-comments: 49
-
-headline: Ask HN: How did you meet your spouse?
-score: 70
-author: gallerdude
-age: 2 days ago
-comments: 69
-
-headline: Ask HN: What are the big differences working at a startup, bigco, old smallco?
-score: 86
-author: aniijbod
-age: 22 hours ago
-comments: 40
-
-headline: Ask HN: What coding challenge sites should I try next?
-score: 122
-author: lakechfoma
-age: 1 day ago
-comments: 60
-
-headline: Ask HN: Time Management Tricks and Tips
-score: 191
-author: wasi0013
-age: 1 day ago
-comments: 73
-
-headline: Ask HN: Is there a fitness wristband that is hackable?
-score: 191
-author: kuon
-age: 2 days ago
-comments: 113
-
-headline: Ask HN: Who is hiring? (December 2017)
-score: 570
-author: whoishiring
-age: 2 days ago
-comments: 812
-
-###NEW SECTION###
-
-
 Writing sorted data for https://news.ycombinator.com/show
 The data is sorted by not yet implemented, so sorted by score.
 
-headline: Show HN: A Raspberry Pi Video Streaming Robot
-score: 3
-author: johncole
-age: 7 hours ago
+headline: Show HN: 8chen - A New Hacker News Client for iOS
+score: 4
+author: 8chen
+age: 1 day ago
 comments: None
 
 headline: Show HN: Move GitHub issues between repositories
-score: 3
+score: 4
 author: dessant
 age: 1 day ago
 comments: None
 
 headline: Show HN: Safe key exchange for multiple parties
-score: 3
+score: 4
 author: maxamel
 age: 1 day ago
-comments: None
-
-headline: Show HN: Analyse hops taken by an email to reach you
-score: 3
-author: akshayKMR
-age: 1 day ago
-comments: None
-
-headline: Show HN: 8chen - A New Hacker News Client for iOS
-score: 4
-author: 8chen
-age: 23 hours ago
 comments: None
 
 headline: Show HN: Quick & dirty Python-to-Javascript syntax converter
@@ -226,16 +28,16 @@ author: mehrdadn
 age: 1 day ago
 comments: None
 
-headline: Show HN: A simple shopping cart SPA written in React and Redux
-score: 4
-author: Gigacore
-age: 1 day ago
-comments: None
+headline: Show HN: Open source crowdfunding platform
+score: 5
+author: preek
+age: 2 hours ago
+comments: 2
 
 headline: Show HN: Proof-of-work difficulty explained
 score: 5
 author: b0ba1lle
-age: 22 hours ago
+age: 1 day ago
 comments: None
 
 headline: Show HN: Automatically Thank Patreon Backers with OpenFaaS
@@ -244,17 +46,29 @@ author: alexellisuk
 age: 4 days ago
 comments: 10
 
-headline: Show HN: An easy-to-use ray-tracer written from scratch in C++
+headline: Show HN: A Raspberry Pi Video Streaming Robot
 score: 15
-author: diegomacario
-age: 2 days ago
-comments: 6
+author: johncole
+age: 1 day ago
+comments: None
+
+headline: Show HN: SumEval - Multi-language evaluation framework for text summarization
+score: 17
+author: icoxfog417
+age: 6 hours ago
+comments: 2
 
 headline: Show HN: Finch.io - tweak design on any live website
 score: 17
 author: degif
-age: 3 days ago
+age: 4 days ago
 comments: 4
+
+headline: Show HN: An easy-to-use ray-tracer written from scratch in C++
+score: 18
+author: diegomacario
+age: 3 days ago
+comments: 6
 
 headline: Show HN: Prime numbers visualization
 score: 20
@@ -262,17 +76,11 @@ author: nitramm
 age: 4 days ago
 comments: 15
 
-headline: Show HN: Hacker News client with story filtering
-score: 21
-author: frfl
-age: 3 days ago
-comments: 11
-
 headline: Show HN: ClarifyJs - Overcoming Limits of JavaScript Method Chaining
 score: 27
 author: omidh28
 age: 1 day ago
-comments: 15
+comments: 16
 
 headline: Show HN: TagUI - Automate web interactions using different native languages
 score: 31
@@ -292,83 +100,89 @@ author: apjana
 age: 4 days ago
 comments: 19
 
-headline: Show HN: Graph Playground - Make Graphs/Networks and run Algorithms
-score: 39
-author: mikedombo
-age: 12 hours ago
-comments: 7
-
 headline: Show HN: Search for BibTeX references from your terminal
 score: 40
 author: ekmartin
-age: 2 days ago
+age: 3 days ago
 comments: 11
 
-headline: Show HN: Breach Insider - Detect a data breach using realistic pseudo-users
-score: 41
-author: graystevens
-age: 10 hours ago
-comments: 25
+headline: Show HN: Manage web sockets from AWS Lambda using Fanout
+score: 50
+author: jkarneges
+age: 11 hours ago
+comments: 5
+
+headline: Show HN: Graph Playground - Make Graphs/Networks and run Algorithms
+score: 56
+author: mikedombo
+age: 1 day ago
+comments: 11
 
 headline: Show HN: Computation at Compile-Time now free online
 score: 57
 author: billsix
-age: 4 days ago
+age: 5 days ago
 comments: 14
+
+headline: Show HN: Breach Insider - Detect a data breach using realistic pseudo-users
+score: 66
+author: graystevens
+age: 1 day ago
+comments: 38
 
 headline: Show HN: Ask X anything - AMA shouldn't be a one time thing
 score: 75
 author: wang2bo2
-age: 2 days ago
+age: 3 days ago
 comments: 23
 
 headline: Show HN: Listen Notes Podcast Search API
-score: 77
+score: 78
 author: wenbin
-age: 1 day ago
+age: 2 days ago
 comments: 29
 
 headline: Show HN: Merchant.js, a state framework for creating idle games
 score: 85
 author: flaque
-age: 2 days ago
+age: 3 days ago
 comments: 28
 
 headline: Show HN: Angelic-hierarchy, a game about Turing machines, philosophy, and math
-score: 94
+score: 95
 author: modalduality
 age: 4 days ago
 comments: 20
 
 headline: Show HN: Freeciv WebGL 3D
-score: 95
+score: 100
 author: roschdal
-age: 1 day ago
+age: 2 days ago
 comments: 15
 
 headline: Show HN: Ondevice SSH - Terminal emulator for devices without public IP address
 score: 152
 author: BrandiATMuhkuh
-age: 6 days ago
+age: 7 days ago
 comments: 89
 
 headline: Show HN: Shazam-like acoustic fingerprinting of continuous audio streams
 score: 155
 author: dest
-age: 3 days ago
+age: 4 days ago
 comments: 76
 
 headline: Show HN: Promptui - Rich UI elements for cli prompts in Go
-score: 192
+score: 196
 author: MayBeColin
-age: 3 days ago
-comments: 42
+age: 4 days ago
+comments: 43
 
 headline: Show HN: Golang DNS server, including DNSSEC and DNS-over-TLS
 score: 283
 author: tenta
 age: 5 days ago
-comments: 62
+comments: 63
 
 ###NEW SECTION###
 
@@ -376,183 +190,369 @@ comments: 62
 Writing sorted data for https://news.ycombinator.com/news
 The data is sorted by not yet implemented, so sorted by score.
 
-headline: The digital hippies want to integrate life and work - but not in a good way
-score: 6
-author: Futurebot
+headline: Etleap Is Hiring Senior Java Developers
+score: None
+author: None
 age: 1 hour ago
 comments: None
 
-headline: 2KB JavaScript animation library
-score: 14
-author: benjamindc
+headline: Domogik: Take Control of Your Home
+score: 3
+author: mabynogy
+age: 1 hour ago
+comments: None
+
+headline: The Never-Ending Foreclosure
+score: 11
+author: mooreds
+age: 2 hours ago
+comments: None
+
+headline: My 20-Year Experience of Software Development Methodologies
+score: 13
+author: fagnerbrack
+age: 2 hours ago
+comments: 2
+
+headline: The Trouble with Politicians Sharing Passwords
+score: 13
+author: robin_reala
+age: 2 hours ago
+comments: 6
+
+headline: Energy Idea for Mars Yields a Clue for Powering Data Centers
+score: 13
+author: known
 age: 6 hours ago
-comments: 8
-
-headline: It's Gonna Get a Lot Easier to Break Science Journal Paywalls
-score: 15
-author: stablemap
-age: 1 hour ago
 comments: None
 
-headline: Show HN: Graph Playground - Make Graphs/Networks and run Algorithms
-score: 39
-author: mikedombo
-age: 12 hours ago
+headline: Using Git hooks to version-control Excel VBA Code
+score: 15
+author: bjoerns
+age: 3 hours ago
+comments: None
+
+headline: Show HN: SumEval - Multi-language evaluation framework for text summarization
+score: 17
+author: icoxfog417
+age: 6 hours ago
+comments: 2
+
+headline: An online flea market that pays people instantly for their used goods
+score: 22
+author: pratap103
+age: 5 hours ago
 comments: 7
 
-headline: Show HN: Breach Insider - Detect a data breach using realistic pseudo-users
-score: 41
-author: graystevens
-age: 10 hours ago
-comments: 25
+headline: Receiving and Decoding Russian Meteor-M2 satellite images in real time
+score: 23
+author: wolframio
+age: 3 hours ago
+comments: None
 
-headline: A TensorFlow Implementation of Baidu's DeepSpeech Architecture
-score: 64
-author: rhakmi
-age: 4 hours ago
-comments: 13
+headline: Titanic: Machine Learning from Disaster
+score: 29
+author: tosh
+age: 6 hours ago
+comments: None
 
-headline: Books from Phoenix Inside Out series
-score: 73
-author: pvsukale3
+headline: Ask HN: In your company, how important is code quality vs. getting things done
+score: 37
+author: maephisto
+age: 1 hour ago
+comments: 26
+
+headline: Reinventing the FPGA Programming Wheel
+score: 37
+author: jonbaer
+age: 8 hours ago
+comments: 11
+
+headline: About the apps that Apple censored in China
+score: 49
+author: JayXon
+age: 14 hours ago
+comments: 26
+
+headline: Reducing Chrome crashes caused by third-party software
+score: 52
+author: discreditable
 age: 6 hours ago
 comments: 21
 
-headline: Dice Become Ordered When Stirred, Not Shaken
-score: 74
-author: ingve
+headline: 'Snoopers' charter' changes put forward
+score: 59
+author: colinscape
+age: 4 hours ago
+comments: 24
+
+headline: Hands-on with the PocketBeagle: a $25 Linux computer with lots of I/O pins
+score: 62
+author: kens
+age: 6 hours ago
+comments: 8
+
+headline: Nara - the typeface that never existed (2011)
+score: 69
+author: thiagoharry
+age: 11 hours ago
+comments: 12
+
+headline: Using LD_PRELOAD to cheat, inject features and investigate programs (2013)
+score: 83
+author: striking
+age: 7 hours ago
+comments: 35
+
+headline: Linux on an 8-bit microcontroller
+score: 86
+author: Ivoah
+age: 6 hours ago
+comments: 20
+
+headline: Never edit a method, always rewrite it
+score: 87
+author: pdq
+age: 7 hours ago
+comments: 50
+
+headline: Optimization for Deep Learning Highlights
+score: 90
+author: stablemap
+age: 14 hours ago
+comments: 7
+
+headline: Mal Lisp for TempleOS
+score: 99
+author: bagnalla
+age: 13 hours ago
+comments: 21
+
+headline: Some of China's greatest advances depend heavily on local conditions
+score: 99
+author: iamthirsty
+age: 11 hours ago
+comments: 69
+
+headline: Theoretical Machine Learning Lecture Series: Deep Learning and Cognition
+score: 102
+author: nabla9
+age: 12 hours ago
+comments: None
+
+headline: Nations agree to ban fishing in Arctic Ocean for at least 16 years
+score: 121
+author: jonbaer
+age: 9 hours ago
+comments: 8
+
+headline: Web Assembly now supported across all browsers
+score: 137
+author: ternaryoperator
+age: 11 hours ago
+comments: 34
+
+headline: Reflecting on Haskell in 2017
+score: 189
+author: setra
+age: 8 hours ago
+comments: 70
+
+headline: What happens when patients find out how good their doctors are? (2004)
+score: 253
+author: adenadel
+age: 11 hours ago
+comments: 126
+
+headline: How Stripe Designs Websites
+score: 374
+author: leerob
+age: 13 hours ago
+comments: 80
+
+###NEW SECTION###
+
+
+Writing sorted data for https://news.ycombinator.com/ask
+The data is sorted by not yet implemented, so sorted by score.
+
+headline: Ask HN: Selling my Slack App
+score: 2
+author: rgbasin
+age: 6 hours ago
+comments: None
+
+headline: Ask HN: Resource recommendations for "Everything about concurrency" presentation
+score: 3
+author: erkanerol
+age: 1 day ago
+comments: None
+
+headline: Ask HN: Transfer app between developer accounts on PlayStore
+score: 3
+author: ansh0l
+age: 1 day ago
+comments: None
+
+headline: Polyglot programming communities
+score: 5
+author: avrmav
+age: 1 day ago
+comments: 3
+
+headline: Ask HN: Any good resources for learning back-end tech as a front-end engineer?
+score: 5
+author: aalleavitch
+age: 1 day ago
+comments: None
+
+headline: Ask HN: What technologies and programming paradigms are underused?
+score: 5
+author: entelechy
+age: 1 day ago
+comments: 4
+
+headline: Ask HN: Anyone who lost it all, or failed dismally, how did you start afresh?
+score: 7
+author: chirau
 age: 2 hours ago
+comments: None
+
+headline: Ask HN: What is your life goal?
+score: 7
+author: gallerdude
+age: 14 hours ago
+comments: 15
+
+headline: Ask HN: What about women on HN?
+score: 7
+author: baxtr
+age: 1 day ago
+comments: 13
+
+headline: Ask HN: Open source software for tracking financial account balances?
+score: 7
+author: dplgk
+age: 1 day ago
+comments: None
+
+headline: Ask HN: Ask HN: How will the 2018 Tax Plan impact startups and small businesses?
+score: 10
+author: arikr
+age: 12 hours ago
+comments: 3
+
+headline: Ask HN: What will be the best developer conferences of 2018?
+score: 10
+author: jakemor
+age: 15 hours ago
+comments: 7
+
+headline: Ask HN: What are the best books to (re)discover philosophy?
+score: 11
+author: simonebrunozzi
+age: 1 day ago
+comments: 7
+
+headline: Ask HN: What is your software specialization and what's interesting about it?
+score: 13
+author: skellera
+age: 2 days ago
+comments: 6
+
+headline: Ask HN: Favorite product roadmaps?
+score: 13
+author: muzani
+age: 3 days ago
+comments: None
+
+headline: Ask HN: Your favourite outstandingly creative/informative YouTube channels?
+score: 15
+author: yesenadam
+age: 6 hours ago
+comments: 7
+
+headline: Ask HN: Is whitelabeling your software a good idea?
+score: 15
+author: pixelfeeder
+age: 1 day ago
+comments: 4
+
+headline: Ask HN: What do you wear to work everyday?
+score: 22
+author: meagher
+age: 2 days ago
+comments: 32
+
+headline: Ask HN: What about the software industry in Iran?
+score: 28
+author: erkanerol
+age: 1 day ago
+comments: 7
+
+headline: Ask HN: How do you recover from burnout?
+score: 33
+author: togusa2017
+age: 3 days ago
+comments: 21
+
+headline: Ask HN: In your company, how important is code quality vs. getting things done
+score: 37
+author: maephisto
+age: 1 hour ago
 comments: 26
 
-headline: Normalization of deviance in software: how broken practices become standard
-score: 74
-author: sidcool
-age: 13 hours ago
-comments: 12
-
-headline: Randomize your WiFi MAC address on Ubuntu 16.04
-score: 75
-author: paulfurley
-age: 5 hours ago
-comments: 35
-
-headline: Where People Spend the Most and Least on Rent in America
-score: 75
-author: emberdev
-age: 5 hours ago
-comments: 68
-
-headline: Behind the Scenes at Xerox Parc's Futures Day - 40 Years Ago
-score: 86
-author: never-the-bride
-age: 16 hours ago
-comments: 12
-
-headline: MyRocks - A RocksDB storage engine with MySQL
-score: 90
-author: guifortaine
-age: 17 hours ago
-comments: 41
-
-headline: Termination of StartCom business
-score: 92
-author: pferde
-age: 8 hours ago
-comments: 35
-
-headline: How to respond when you are asked for an estimate?
-score: 94
-author: lainon
-age: 4 hours ago
-comments: 40
-
-headline: A faster way to make Bose-Einstein condensates
-score: 95
-author: CarolineW
-age: 22 hours ago
-comments: 14
-
-headline: Amazon Macie: A machine learning service to discover and protect sensitive data
-score: 104
-author: polygot
-age: 16 hours ago
-comments: 23
-
-headline: What Was Once Hailed as First U.S. Offshore Wind Farm Is No More
-score: 108
-author: protomyth
-age: 17 hours ago
-comments: 56
-
-headline: A primer on Elixir Stream
-score: 111
-author: wooola
-age: 14 hours ago
-comments: 2
-
-headline: PayPal says personal data may be compromised for 1.6M TIO users
-score: 161
-author: michaelmwangi
-age: 23 hours ago
-comments: 37
-
-headline: Fast desktop-scale extrusion 3D printing
-score: 174
-author: lainon
+headline: Ask HN: At your company, what things do you want to outsource but can't?
+score: 50
+author: stretchwithme
 age: 1 day ago
-comments: 81
+comments: 51
 
-headline: A Secretly Detained American Has Asked for a Lawyer - But Gov Won't Give Him One
-score: 179
-author: gehwartzen
-age: 11 hours ago
-comments: 82
+headline: Ask HN: Best internal tools your startup built?
+score: 50
+author: tramGG
+age: 5 days ago
+comments: 18
 
-headline: Find every domain someone owns automatically
-score: 182
-author: tzury
-age: 15 hours ago
-comments: 95
+headline: Ask HN: Good resources on learning how docker works under the hood?
+score: 53
+author: mohitmun
+age: 3 days ago
+comments: 15
 
-headline: Google API Explorer
+headline: Ask HN: How did you meet your spouse?
+score: 72
+author: gallerdude
+age: 3 days ago
+comments: 71
+
+headline: Ask HN: What are the big differences working at a startup, bigco, old smallco?
+score: 91
+author: aniijbod
+age: 1 day ago
+comments: 42
+
+headline: Ask HN: What coding challenge sites should I try next?
+score: 126
+author: lakechfoma
+age: 2 days ago
+comments: 61
+
+headline: Ask HN: Is there a fitness wristband that is hackable?
 score: 193
-author: tzury
-age: 20 hours ago
-comments: 34
+author: kuon
+age: 2 days ago
+comments: 113
 
-headline: A Generation Lost in the Bazaar (2012)
-score: 198
-author: rendx
-age: 7 hours ago
-comments: 79
+headline: Ask HN: Time Management Tricks and Tips
+score: 201
+author: wasi0013
+age: 2 days ago
+comments: 76
 
-headline: William Alsup, the coding judge who decides tech cases
-score: 208
-author: nkurz
-age: 18 hours ago
-comments: 34
-
-headline: Woman with Transplanted Uterus Gives Birth, the First in the U.S
-score: 213
-author: iamthirsty
-age: 20 hours ago
-comments: 155
-
-headline: If your iOS 11 device unexpectedly restarts repeatedly on or after December 2
-score: 229
-author: rosstex
-age: 1 day ago
-comments: 121
-
-headline: Maintaining an Independent Browser Is Expensive
-score: 326
-author: jonchang
-age: 12 hours ago
-comments: 203
-
-headline: Django 2.0 released
-score: 583
-author: Hangya
-age: 1 day ago
-comments: 151
+headline: Ask HN: Who is hiring? (December 2017)
+score: 574
+author: whoishiring
+age: 2 days ago
+comments: 836
 
