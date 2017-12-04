@@ -14,6 +14,13 @@ def main():
     
 #    HTMLPage(testmode = True, testmodeFile = 'testdata\SampleHTML.html', localexec = True) # testmode localexec
     
+    #get command line arguments and define the sort order to be used.
+    validArgs = ('rank', 'id', 'score', 'age', 'comments')
+    cmdArgs = getCmdArgs(validArgs)
+    if any(x in cmdArgs.sortOrder for x in validArgs): pass
+    else: cmdArgs.sortOrder = 'score'
+    #print(cmdArgs.sortOrder) # diagnostic message
+
     URLlist = {0 : 'https://news.ycombinator.com/news', 1 : 'https://news.ycombinator.com/show', 2 : 'https://news.ycombinator.com/ask'}
     pageDict = dict()
 
@@ -25,20 +32,25 @@ def main():
     results = loop.run_until_complete(runBlockingTasks(pageDict)) # execute object actions asynchronously
     loop.close()
 
-    writeResultsToFile(results, 'output\output.txt')
+    writeResultsToFile(results, 'output\output.txt', sortOrder = cmdArgs.sortOrder)
    
+def getCmdArgs(validArgs):
+    parser = argparse.ArgumentParser()
+    parser.add_argument('-s', action = 'store', dest = 'sortOrder', help = 'Specify the sort order. Defaults to \'score\' Acceptable values are: {}'.format(validArgs))
+    return parser.parse_args()
+    
 
-def writeResultsToFile(results, filepath = 'output\output.txt', sortby = 'score'):
+def writeResultsToFile(results, filepath = 'output\output.txt', sortOrder = 'score'):
     '''Write HTML page results to the passed in file. Overwrites previous data.'''
     
     fh = open(filepath, mode = 'w')
     print('\nOpened {} for writing results.\n'.format(filepath)) # Diagnostic message
     
     for page in results: # Iterate through each page
-        print('Writing results sorted by {} from {} to file: {}.'.format(sortby, page.URL, filepath)) #Diagnostic message
+        print('Writing results sorted by {} from {} to file: {}.'.format(sortOrder, page.URL, filepath)) #Diagnostic message
         try:
-            fh.write('###NEW SECTION###\n\n\nWriting sorted data for {}\nThe data is sorted by {}\n\n'.format(page.URL, 'not yet implemented, so sorted by score.')) # Write the section header with the page URL
-            for s in sorted(page.bakedDict.items(), key=lambda x:int(0 if getitem(x[1],sortby) == None else getitem(x[1],sortby))): # Use the Sorted function to help iterate through the Page's baked dictionary. Sorts using the passed in header.
+            fh.write('###NEW SECTION###\n\n\nWriting sorted data for {}\nThe data is sorted by {}\n\n'.format(page.URL, sortOrder)) # Write the section header with the page URL
+            for s in sorted(page.bakedDict.items(), key=lambda x:int(0 if getitem(x[1],sortOrder) == None else getitem(x[1],sortOrder))): # Use the Sorted function to help iterate through the Page's baked dictionary. Sorts using the passed in header.
                 #print(s[1]['headline']) #Diagnostic message
                 for linkData in s[1]: #Iterate through each link group in the baked dict.
                     if linkData != 'URL' and linkData != 'id':  #Don't write the URL or the uniqueID to file.

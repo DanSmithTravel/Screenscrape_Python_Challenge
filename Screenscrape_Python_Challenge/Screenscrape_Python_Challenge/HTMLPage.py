@@ -111,13 +111,20 @@ class HTMLPage:
             except:
                 pass
 
-    def getAge(self, element, trim=False):
+    def getAge(self, element, trim=False, minutesOnly = True):
         """Returns age of post in 'xx minutes/hours/days ago'.\r
         If trim=True, method returns a flat digit value."""
         for tag in element.find_all('span'):
             try:
                 if 'age' in tag.get('class'):
-                    if trim: return re.search('\\d+', tag.next_element.next_element).group(0) #returns just the first group of digits in the string, i.e. the number of hours/minutes
+                    if trim:
+                        return re.search('\\d+', tag.next_element.next_element).group(0) #returns just the first group of digits in the string, i.e. the number of hours/minutes
+                    elif minutesOnly:
+                        if 'minutes' in tag.next_element.next_element: return re.search('\\d+', tag.next_element.next_element).group(0)
+                        elif 'hours' in tag.next_element.next_element: return str(int(re.search('\\d+', tag.next_element.next_element).group(0)) * 60)
+                        elif 'days' or 'day' in tag.next_element.next_element: return str(int(re.search('\\d+', tag.next_element.next_element).group(0)) * 60 * 24)
+                        else: return None
+                        
                     else: return tag.next_element.next_element
 
             except:
@@ -146,7 +153,7 @@ class HTMLPage:
                 temp['URL'] = self.getURL(uncookedLinkDict[rawLinkGroup]) # Makes diag output difficult to read. Re-enable later.
                 temp['score'] = self.getPoints(uncookedLinkDict[rawLinkGroup])
                 temp['author'] = self.getAuthor(uncookedLinkDict[rawLinkGroup])
-                temp['age'] = self.getAge(uncookedLinkDict[rawLinkGroup])
+                temp['age'] = self.getAge(uncookedLinkDict[rawLinkGroup], minutesOnly = True)
                 temp['comments'] = self.getNumComments(uncookedLinkDict[rawLinkGroup], True)
                 # Put the completed link group object dictionary into the final baked dict.
                 self.bakedDict[rawLinkGroup] = temp
