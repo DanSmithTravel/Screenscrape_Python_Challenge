@@ -47,7 +47,6 @@ class HTMLPage:
         except Exception as e:
             print('There was an error trying to parse the page. Error:\n{}'.format(e)) #Diagnostic message
 
-
     def createElementDict(self, parsedPage, dictionary): 
         """create a dictionary of all link groups on the HTML page"""
                 
@@ -89,13 +88,14 @@ class HTMLPage:
             except:
                 pass
 
-    def getPoints(self, element):
+    def getPoints(self, element, trim = True):
         """Search through all <span> tags in the link group element for the 'score' class. Extract the number of points."""
 
         for tag in element.find_all('span'):
             try:
                 if 'score' in tag.get('class'):
-                    return tag.next_element
+                    if trim: return re.search('\\d+', tag.next_element).group(0)
+                    else: return tag.next_element
 
             except:
                 pass
@@ -110,13 +110,20 @@ class HTMLPage:
             except:
                 pass
 
-    def getAge(self, element, trim=False):
+    def getAge(self, element, trim=False, minutesOnly = True):
         """Returns age of post in 'xx minutes/hours/days ago'.\r
         If trim=True, method returns a flat digit value."""
         for tag in element.find_all('span'):
             try:
                 if 'age' in tag.get('class'):
-                    if trim: return re.search('\\d+', tag.next_element.next_element).group(0) #returns just the first group of digits in the string, i.e. the number of hours/minutes
+                    if trim:
+                        return re.search('\\d+', tag.next_element.next_element).group(0) #returns just the first group of digits in the string, i.e. the number of hours/minutes
+                    elif minutesOnly:
+                        if 'minutes' in tag.next_element.next_element: return re.search('\\d+', tag.next_element.next_element).group(0)
+                        elif 'hours' in tag.next_element.next_element: return str(int(re.search('\\d+', tag.next_element.next_element).group(0)) * 60)
+                        elif 'days' or 'day' in tag.next_element.next_element: return str(int(re.search('\\d+', tag.next_element.next_element).group(0)) * 60 * 24)
+                        else: return None
+                        
                     else: return tag.next_element.next_element
 
             except:
@@ -145,7 +152,7 @@ class HTMLPage:
                 temp['URL'] = self.getURL(uncookedLinkDict[rawLinkGroup]) # Makes diag output difficult to read. Re-enable later.
                 temp['score'] = self.getPoints(uncookedLinkDict[rawLinkGroup])
                 temp['author'] = self.getAuthor(uncookedLinkDict[rawLinkGroup])
-                temp['age'] = self.getAge(uncookedLinkDict[rawLinkGroup])
+                temp['age'] = self.getAge(uncookedLinkDict[rawLinkGroup], minutesOnly = True)
                 temp['comments'] = self.getNumComments(uncookedLinkDict[rawLinkGroup], True)
                 # Put the completed link group object dictionary into the final baked dict.
                 self.bakedDict[rawLinkGroup] = temp
@@ -161,7 +168,7 @@ class HTMLPage:
         self.bakedDict = dict()
         
         try:
-            self.URL = kwargs['url'] # See if we're in testmode or not. and pull the URL if we are.
+            self.URL = kwargs['url'] # See if we're in testmode or not and pull the URL if we are.
             print('HTMLPage Object {} created at {}\n'.format(self.URL, time.time()))
         except Exception as e:
             print('No URL passed. we might be in testmode.\nTestmode: {}'.format('testmode' in kwargs))
@@ -186,13 +193,14 @@ class HTMLPage:
                 self.bakeLinkDict(self.elementDict) # bake the link dict into plain text for printing
             else:
                 pass
-#
+
         else: # assume this is a live execute and NOT in testmode or running unit tests
             pass
 
     
         
-    def manualInit(self): #Build out object 
+    def manualInit(self):
+        '''Build out object, including HTTP request and baking the link dictionary.'''
         manInitTime = time.time()
         print('Starting manual init of: {} on thread {} at {}\n'.format(self.URL, current_thread(), manInitTime))
         

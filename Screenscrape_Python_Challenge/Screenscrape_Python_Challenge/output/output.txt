@@ -1,0 +1,558 @@
+###NEW SECTION###
+
+
+Writing sorted data for https://news.ycombinator.com/show
+The data is sorted by age
+
+headline: Show HN: Open source crowdfunding platform
+score: 6
+author: preek
+age: 240
+comments: 2
+
+headline: Show HN: SumEval - Multi-language evaluation framework for text summarization
+score: 20
+author: icoxfog417
+age: 480
+comments: 2
+
+headline: Show HN: Manage web sockets from AWS Lambda using Fanout
+score: 50
+author: jkarneges
+age: 780
+comments: 5
+
+headline: Show HN: A Raspberry Pi Video Streaming Robot
+score: 15
+author: johncole
+age: 1440
+comments: None
+
+headline: Show HN: Graph Playground - Make Graphs/Networks and run Algorithms
+score: 56
+author: mikedombo
+age: 1440
+comments: 11
+
+headline: Show HN: Breach Insider - Detect a data breach using realistic pseudo-users
+score: 67
+author: graystevens
+age: 1440
+comments: 38
+
+headline: Show HN: Proof-of-work difficulty explained
+score: 5
+author: b0ba1lle
+age: 1440
+comments: None
+
+headline: Show HN: 8chen - A New Hacker News Client for iOS
+score: 4
+author: 8chen
+age: 1440
+comments: None
+
+headline: Show HN: Move GitHub issues between repositories
+score: 4
+author: dessant
+age: 1440
+comments: None
+
+headline: Show HN: Safe key exchange for multiple parties
+score: 4
+author: maxamel
+age: 1440
+comments: None
+
+headline: Show HN: Freeciv WebGL 3D
+score: 100
+author: roschdal
+age: 2880
+comments: 15
+
+headline: Show HN: Listen Notes Podcast Search API
+score: 78
+author: wenbin
+age: 2880
+comments: 29
+
+headline: Show HN: ClarifyJs - Overcoming Limits of JavaScript Method Chaining
+score: 27
+author: omidh28
+age: 2880
+comments: 16
+
+headline: Show HN: Quick & dirty Python-to-Javascript syntax converter
+score: 4
+author: mehrdadn
+age: 2880
+comments: None
+
+headline: Show HN: Merchant.js, a state framework for creating idle games
+score: 85
+author: flaque
+age: 4320
+comments: 28
+
+headline: Show HN: Ask X anything - AMA shouldn't be a one time thing
+score: 75
+author: wang2bo2
+age: 4320
+comments: 23
+
+headline: Show HN: Search for BibTeX references from your terminal
+score: 40
+author: ekmartin
+age: 4320
+comments: 11
+
+headline: Show HN: An easy-to-use ray-tracer written from scratch in C++
+score: 18
+author: diegomacario
+age: 4320
+comments: 6
+
+headline: Show HN: Promptui - Rich UI elements for cli prompts in Go
+score: 196
+author: MayBeColin
+age: 5760
+comments: 43
+
+headline: Show HN: Shazam-like acoustic fingerprinting of continuous audio streams
+score: 155
+author: dest
+age: 5760
+comments: 76
+
+headline: Show HN: Angelic-hierarchy, a game about Turing machines, philosophy, and math
+score: 95
+author: modalduality
+age: 5760
+comments: 20
+
+headline: Show HN: TagUI - Automate web interactions using different native languages
+score: 31
+author: kensoh
+age: 5760
+comments: 6
+
+headline: Show HN: Prime numbers visualization
+score: 20
+author: nitramm
+age: 5760
+comments: 15
+
+headline: Show HN: Finch.io - tweak design on any live website
+score: 17
+author: degif
+age: 5760
+comments: 4
+
+headline: Show HN: Computation at Compile-Time now free online
+score: 57
+author: billsix
+age: 7200
+comments: 14
+
+headline: Show HN: Drag and drop dashboard builder based on CxJS and Firebase
+score: 34
+author: mstijak
+age: 7200
+comments: 3
+
+headline: Show HN: ddgr - search DuckDuckGo from your terminal
+score: 35
+author: apjana
+age: 7200
+comments: 19
+
+headline: Show HN: Automatically Thank Patreon Backers with OpenFaaS
+score: 11
+author: alexellisuk
+age: 7200
+comments: 10
+
+headline: Show HN: Golang DNS server, including DNSSEC and DNS-over-TLS
+score: 283
+author: tenta
+age: 8640
+comments: 63
+
+headline: Show HN: Ondevice SSH - Terminal emulator for devices without public IP address
+score: 152
+author: BrandiATMuhkuh
+age: 10080
+comments: 89
+
+###NEW SECTION###
+
+
+Writing sorted data for https://news.ycombinator.com/news
+The data is sorted by age
+
+headline: Introducing Messenger Kids
+score: 12
+author: adidash
+age: 14
+comments: None
+
+headline: Rocket - A Rust game running on WASM
+score: 91
+author: wofo
+age: 120
+comments: 14
+
+headline: Domogik: Take Control of Your Home
+score: 13
+author: mabynogy
+age: 180
+comments: 2
+
+headline: Etleap Is Hiring Senior Java Developers
+score: None
+author: None
+age: 180
+comments: None
+
+headline: I Don't Want to Configure Apps (2016)
+score: 5
+author: knivets
+age: 180
+comments: 2
+
+headline: How Zarafa, France's First Giraffe, Became a Cultural Sensation
+score: 6
+author: Thevet
+age: 180
+comments: None
+
+headline: My 20-Year Experience of Software Development Methodologies
+score: 68
+author: fagnerbrack
+age: 240
+comments: 27
+
+headline: The Trouble with Politicians Sharing Passwords
+score: 45
+author: robin_reala
+age: 240
+comments: 16
+
+headline: Ffwd: delegation is (much) faster than you think
+score: 13
+author: ingve
+age: 240
+comments: None
+
+headline: Using Git hooks to version-control Excel VBA Code
+score: 25
+author: bjoerns
+age: 300
+comments: 3
+
+headline: Receiving and Decoding Russian Meteor-M2 satellite images in real time
+score: 41
+author: wolframio
+age: 300
+comments: None
+
+headline: 'Snoopers' charter' changes put forward
+score: 89
+author: colinscape
+age: 360
+comments: 54
+
+headline: An online flea market that pays people instantly for their used goods
+score: 31
+author: pratap103
+age: 420
+comments: 16
+
+headline: I Tried Emailing Like A CEO And It Made My Life Better
+score: 21
+author: ajoy
+age: 420
+comments: None
+
+headline: Hands-on with the PocketBeagle: a $25 Linux computer with lots of I/O pins
+score: 81
+author: kens
+age: 480
+comments: 13
+
+headline: Linux on an 8-bit microcontroller
+score: 109
+author: Ivoah
+age: 480
+comments: 24
+
+headline: Reducing Chrome crashes caused by third-party software
+score: 71
+author: discreditable
+age: 480
+comments: 29
+
+headline: Titanic: Machine Learning from Disaster
+score: 37
+author: tosh
+age: 480
+comments: 2
+
+headline: Energy Idea for Mars Yields a Clue for Powering Data Centers
+score: 21
+author: known
+age: 480
+comments: 3
+
+headline: Using LD_PRELOAD to cheat, inject features and investigate programs (2013)
+score: 95
+author: striking
+age: 540
+comments: 52
+
+headline: Never edit a method, always rewrite it
+score: 110
+author: pdq
+age: 540
+comments: 70
+
+headline: Reflecting on Haskell in 2017
+score: 225
+author: setra
+age: 600
+comments: 86
+
+headline: Reinventing the FPGA Programming Wheel
+score: 44
+author: jonbaer
+age: 600
+comments: 12
+
+headline: Nations agree to ban fishing in Arctic Ocean for at least 16 years
+score: 173
+author: jonbaer
+age: 660
+comments: 18
+
+headline: What happens when patients find out how good their doctors are? (2004)
+score: 269
+author: adenadel
+age: 780
+comments: 134
+
+headline: Web Assembly now supported across all browsers
+score: 166
+author: ternaryoperator
+age: 780
+comments: 63
+
+headline: Nara - the typeface that never existed (2011)
+score: 77
+author: thiagoharry
+age: 780
+comments: 14
+
+headline: Theoretical Machine Learning Lecture Series: Deep Learning and Cognition
+score: 113
+author: nabla9
+age: 840
+comments: None
+
+headline: How Stripe Designs Websites
+score: 413
+author: leerob
+age: 900
+comments: 89
+
+headline: Mal Lisp for TempleOS
+score: 110
+author: bagnalla
+age: 900
+comments: 25
+
+###NEW SECTION###
+
+
+Writing sorted data for https://news.ycombinator.com/ask
+The data is sorted by age
+
+headline: Ask HN: In your company, how important is code quality vs. getting things done
+score: 68
+author: maephisto
+age: 180
+comments: 62
+
+headline: Ask HN: Anyone who lost it all, or failed dismally, how did you start afresh?
+score: 14
+author: chirau
+age: 240
+comments: None
+
+headline: Ask HN: Your favourite outstandingly creative/informative YouTube channels?
+score: 18
+author: yesenadam
+age: 480
+comments: 9
+
+headline: Ask HN: Selling my Slack App
+score: 4
+author: rgbasin
+age: 480
+comments: None
+
+headline: Ask HN: Ask HN: How will the 2018 Tax Plan impact startups and small businesses?
+score: 11
+author: arikr
+age: 840
+comments: 3
+
+headline: Ask HN: What is your life goal?
+score: 9
+author: gallerdude
+age: 960
+comments: 15
+
+headline: Ask HN: What will be the best developer conferences of 2018?
+score: 12
+author: jakemor
+age: 1020
+comments: 7
+
+headline: Ask HN: What about the software industry in Iran?
+score: 28
+author: erkanerol
+age: 1440
+comments: 7
+
+headline: Ask HN: What are the big differences working at a startup, bigco, old smallco?
+score: 93
+author: aniijbod
+age: 1440
+comments: 42
+
+headline: Ask HN: Is whitelabeling your software a good idea?
+score: 15
+author: pixelfeeder
+age: 1440
+comments: 4
+
+headline: Ask HN: What about women on HN?
+score: 9
+author: baxtr
+age: 1440
+comments: 13
+
+headline: Ask HN: Open source software for tracking financial account balances?
+score: 7
+author: dplgk
+age: 1440
+comments: None
+
+headline: Ask HN: Resource recommendations for "Everything about concurrency" presentation
+score: 3
+author: erkanerol
+age: 1440
+comments: None
+
+headline: Ask HN: Transfer app between developer accounts on PlayStore
+score: 3
+author: ansh0l
+age: 1440
+comments: None
+
+headline: Polyglot programming communities
+score: 5
+author: avrmav
+age: 1440
+comments: 3
+
+headline: Ask HN: Any good resources for learning back-end tech as a front-end engineer?
+score: 5
+author: aalleavitch
+age: 1440
+comments: None
+
+headline: Ask HN: What technologies and programming paradigms are underused?
+score: 5
+author: entelechy
+age: 1440
+comments: 4
+
+headline: Ask HN: Who is hiring? (December 2017)
+score: 574
+author: whoishiring
+age: 2880
+comments: 838
+
+headline: Ask HN: What coding challenge sites should I try next?
+score: 127
+author: lakechfoma
+age: 2880
+comments: 61
+
+headline: Ask HN: Time Management Tricks and Tips
+score: 203
+author: wasi0013
+age: 2880
+comments: 76
+
+headline: Ask HN: What is your software specialization and what's interesting about it?
+score: 14
+author: skellera
+age: 2880
+comments: 6
+
+headline: Ask HN: At your company, what things do you want to outsource but can't?
+score: 51
+author: stretchwithme
+age: 2880
+comments: 51
+
+headline: Ask HN: Separate Logic from IO
+score: 8
+author: truth_seeker
+age: 2880
+comments: 4
+
+headline: Ask HN: Is there a fitness wristband that is hackable?
+score: 193
+author: kuon
+age: 4320
+comments: 113
+
+headline: Ask HN: Good resources on learning how docker works under the hood?
+score: 54
+author: mohitmun
+age: 4320
+comments: 15
+
+headline: Ask HN: How did you meet your spouse?
+score: 73
+author: gallerdude
+age: 4320
+comments: 71
+
+headline: Ask HN: What do you wear to work everyday?
+score: 22
+author: meagher
+age: 4320
+comments: 32
+
+headline: Ask HN: How do you recover from burnout?
+score: 33
+author: togusa2017
+age: 4320
+comments: 21
+
+headline: Ask HN: Favorite product roadmaps?
+score: 13
+author: muzani
+age: 4320
+comments: None
+
+headline: Ask HN: Best internal tools your startup built?
+score: 50
+author: tramGG
+age: 7200
+comments: 18
+
