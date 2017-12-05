@@ -15,13 +15,13 @@ def main():
 #    HTMLPage(testmode = True, testmodeFile = 'testdata\SampleHTML.html', localexec = True) # testmode localexec
 
     #get command line arguments and define the sort order to be used.
-    validArgs = ('rank', 'id', 'score', 'age', 'comments')
-    cmdArgs = getCmdArgs(validArgs)
+    validSortArgs = ('rank', 'id', 'score', 'age', 'comments')
+    cmdArgs = getCmdArgs(validSortArgs)
     if cmdArgs.sortOrder == None:
         cmdArgs.sortOrder = 'score' # set the default sort order to 'score' if no sort arg was passed
         print('No arguments set. Using default sort order of \'Score\'\n')
     else:
-        if any(x in cmdArgs.sortOrder for x in validArgs): print('Invalid sort order. Using default sort order of \'Score\'\n')
+        if any(x in cmdArgs.sortOrder for x in validSortArgs): print('Invalid sort order. Using default sort order of \'Score\'\n')
         else: cmdArgs.sortOrder = 'score' # set the default sort order to 'score' if an invalid arg was passed.
     
     # define the list of URLs to scrape.
@@ -43,10 +43,10 @@ def main():
     else:
         writeResultsToFile(results, filepath = cmdArgs.filePath, sortOrder = cmdArgs.sortOrder)
    
-def getCmdArgs(validArgs):
+def getCmdArgs(validSortArgs):
     '''Pulls commmand line arguments and returns the parsed object.'''
     parser = argparse.ArgumentParser()
-    parser.add_argument('-s', action = 'store', dest = 'sortOrder', help = 'Specify the sort order. Defaults to \'score\' Acceptable values are: {}'.format(validArgs))
+    parser.add_argument('-s', action = 'store', dest = 'sortOrder', help = 'Specify the sort order. Defaults to \'score\' Acceptable values are: {}'.format(validSortArgs))
     parser.add_argument('-p', action = 'store', dest = 'filePath', help = 'specify the explicit or relative file path to output data to. Defaults to \'output\'output.txt if not set.')
     return parser.parse_args()
     

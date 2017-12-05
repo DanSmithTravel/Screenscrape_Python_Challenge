@@ -13,25 +13,27 @@ class HTMLPage:
         Pass in url only for live mode.\r
         Pass in testmode(any value) and testmodeFile(local HTML file) for testing."""
         
-        if testmode: #
+        if testmode: # Grab the local testmode file if we're in testmode.
             try:
                 return open(testmodeFile, encoding = 'utf-8')
 
             except Exception as e:
-                print(e)
+                self.DO_NOT_PROCESS = True
+                print("Failed to retrieve page testmode File: {}. Skipping this page. Error:\n{}".format(testmodeFile, e))
 
-        elif url != '':
+        elif url != '' and url != None:
             try:
-                #return urllib.request.urlopen(url)
-                
+                #return urllib.request.urlopen(url) # deprecated synchronous method                
                 async with aiohttp.ClientSession() as session:
                     html = await self.fetchPage(session, url, 5)
                     return html
             
             except Exception as e:
-                print(e)
+                print("Failed to retrieve page from URL: {}. Skipping this page. Error:\n{}".format(url, e))
+                self.DO_NOT_PROCESS = True
         else:
-            raise Exception("No URL passed in live mode. Cannot retrieve any page.")
+            self.DO_NOT_PROCESS = True
+            print("No URL passed in live mode. Cannot retrieve any page. Skipping this page.")
 
 
     async def fetchPage(self, session, url, timeout = 10):
@@ -147,7 +149,7 @@ class HTMLPage:
             try:
                 if 'rank' in tag.get('class'):
                     return re.search('\\d+', tag.next_element).group(0)
-                    #else: return tag.next_element
+
 
             except:
                 pass
@@ -173,22 +175,14 @@ class HTMLPage:
         return str(ustring).replace(u"\u2018", "'").replace(u"\u2019", "'").replace(u'\xa0', " ").replace(u"\u2013", "-").replace(u"\u201C", "\"").replace(u"\u201D", "\"")
 
     def __init__(self, **kwargs):
-        #initialize variables and print diagnostic trace
+        #initialize variables and print diagnostic traces
         self.startTime = time.time()
         self.elementDict = dict()
         self.bakedDict = dict()
-        
-        try:
-            self.URL = kwargs['url'] # See if we're in testmode or not and pull the URL if we are.
-            print('HTMLPage Object {} created at {}\n'.format(self.URL, time.time()))
-        except Exception as e:
-            print('No URL passed. we might be in testmode.\nTestmode: {}'.format('testmode' in kwargs))
-            if 'testmode' not in kwargs: raise Exception('Error: No URL passed to object, but we\'re not in test mode!. Exception:\n{}'.format(e))
-            else: pass # test for testmode below.
-
+        self.DO_NOT_PROCESS = False # prevents this page from being processed further if we're unable to get the page at the URL.
         
         if 'testmode' in kwargs: # if testmode(any value) was passed in, run object in testing mode with local HTML from file.
-            print('HTMLPage Object {} created at {}\n'.format(kwargs.get('testmodeFile'), time.time()))
+            print('HTMLPage Object from {} created at {}\n'.format(kwargs.get('testmodeFile'), time.time()))
             if 'localexec' in kwargs: # if localexec(any value) was passed in, go ahead and automatically run the init methods with the passed file.
                 loop = asyncio.new_event_loop() # generate a new loop in case we're already executing in one.
                 asyncio.set_event_loop(loop) # set the new loop
@@ -197,19 +191,24 @@ class HTMLPage:
                 loop.run_until_complete(
                     asyncio.gather(self.process_async_HTMLBody(self.getHTMLPage, testmode = True, testmodeFile = kwargs['testmodeFile']))
                                 )
-                loop.run_until_complete(self.parsePage(self.HTMLBody)) # parse the page async
-                loop.close() # loop no longer needed. close it.
-
-                self.createElementDict(self.parsedPage, self.elementDict) # create a dictionary of the link group objects from the page
-                self.bakeLinkDict(self.elementDict) # bake the link dict into plain text for printing
+                if self.DO_NOT_PROCESS == False:
+                    loop.run_until_complete(self.parsePage(self.HTMLBody)) # parse the page async
+                    loop.close() # loop no longer needed. close it.
+                        
+                    self.createElementDict(self.parsedPage, self.elementDict) # create a dictionary of the link group objects from the page
+                    self.bakeLinkDict(self.elementDict) # bake the link dict into plain text for printing
+                else: pass
             else:
-                pass
+                pass # Wasn't localexec, so we just create a blank object and move on.
 
         else: # assume this is a live execute and NOT in testmode or running unit tests
-            pass
+            try:
+                self.URL = kwargs['url'] # See if we're in testmode or not and pull the URL if we are.
+                print('HTMLPage Object from {} created at {}\n'.format(self.URL, time.time()))
+            except Exception as e:
+                raise Exception('Error: No URL passed to object, but we\'re not in test mode!. Exception:\n{}'.format(e))
+                
 
-    
-        
     def manualInit(self):
         '''Build out object, including HTTP request and baking the link dictionary.'''
         manInitTime = time.time()
@@ -218,16 +217,19 @@ class HTMLPage:
         loop = asyncio.new_event_loop() # generate a new loop in case we're already executing in one.
         asyncio.set_event_loop(loop) # set the new loop
         loop.run_until_complete(
-            asyncio.gather(self.process_async_HTMLBody(self.getHTMLPage))
-                                )    
-        loop.run_until_complete(self.parsePage(self.HTMLBody)) # parse the page async
-        loop.close() # loop no longer needed. close it.
+            asyncio.gather(self.process_async_HTMLBody(self.getHTMLPage)) # Get the HTML page async
+)    
+        if self.DO_NOT_PROCESS == False:
+            loop.run_until_complete(self.parsePage(self.HTMLBody)) # parse the page async
+            loop.close() # loop no longer needed. close it.
 
-        self.createElementDict(self.parsedPage, self.elementDict) # create a dictionary of the link group objects from the page
-        self.bakeLinkDict(self.elementDict) # bake the link dict into plain text for printing
-        print('Finished async manual init of: {} at {}.\n It took {:.2f} seconds'.format(self.URL, time.time(), time.time() - manInitTime))
+            self.createElementDict(self.parsedPage, self.elementDict) # create a dictionary of the link group objects from the page
+            self.bakeLinkDict(self.elementDict) # bake the link dict into plain text for printing
 
-        return self
+            print('Finished async manual init of: {} at {}.\n It took {:.2f} seconds'.format(self.URL, time.time(), time.time() - manInitTime))
+
+            return self
+        else: pass
         
     async def process_async_HTMLBody(self, async_function, testmode = False, testmodeFile = None):
         if testmode:
