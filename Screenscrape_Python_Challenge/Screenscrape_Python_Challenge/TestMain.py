@@ -11,3 +11,11 @@ def test_commandLineArgs():
     fh.close()
     foundSearchTerm = True if fileText.find('sorted by age') != -1 else False
     assert foundSearchTerm == True
+
+def test_stripBadPages():
+    testPage = HTMLPage(url = 'https://news.ycombinator.comx/news') # testmode localexec. This page should not exist.
+    testPage.DO_NOT_PROCESS = True # mark for deletion
+    PageDict = {0:testPage}
+    results = [testPage,]
+    Screenscrape_Python_Challenge.stripBadPages(PageDict, results) # Bad pages should be stripped out of results.
+    assert results == []

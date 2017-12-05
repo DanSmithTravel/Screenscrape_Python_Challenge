@@ -37,18 +37,22 @@ def main():
     results = loop.run_until_complete(runBlockingTasks(pageDict)) # execute object actions asynchronously
     loop.close()
 
-    #removes the page from the dictionary if there was an error gathering the page from URL.
-    for page in pageDict:
-        if pageDict[page].DO_NOT_PROCESS == True:
-            del results[results.index(pageDict[page])]
-            print('\nPage at {} could not be retrieved, so it\'s been marked for deletion from the page dictionary.'.format(pageDict[page].URL))
-
+    stripBadPages(pageDict, results)
+    
     #Write everything to file using the sort order specified by the command line args.
     if cmdArgs.filePath == None:
             writeResultsToFile(results, sortOrder = cmdArgs.sortOrder)
     else:
         writeResultsToFile(results, filepath = cmdArgs.filePath, sortOrder = cmdArgs.sortOrder)
-   
+ 
+def stripBadPages(pageDict, results):
+    """removes the pages from the results dictionary if there was an error gathering the page from URL."""
+    for page in pageDict:
+        if pageDict[page].DO_NOT_PROCESS == True:
+            del results[results.index(pageDict[page])]
+            print('\nPage at {} could not be retrieved, so it\'s been marked for deletion from the page dictionary.'.format(pageDict[page].URL))
+
+
 def getCmdArgs(validSortArgs):
     '''Pulls commmand line arguments and returns the parsed object.'''
     parser = argparse.ArgumentParser()
