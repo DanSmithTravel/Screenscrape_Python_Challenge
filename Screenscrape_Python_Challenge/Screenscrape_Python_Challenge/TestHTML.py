@@ -108,7 +108,10 @@ def test_bakeLinkDict():
     assert y.bakedDict == answerKey
 
 def getAttrFromDB(attribute):
+    '''For use in testing the getxxx methods of TestHTML. Pass in the attribute to get.
+    Returns a beautifulSoup object with a single HTML Link Group element, the expected answer key for the attribute, and the id of the element retrieved from the DB.'''
 
+    #Initialize some variables
     answerKey = dict()
     colNames = ('itemID', 'id', 'headline', 'rank', 'URL', 'score', 'author', 'age', 'comments') #database columnn names. These are in the same order as the database and must not be altered.
     id = str()
@@ -169,8 +172,8 @@ def test_getAge():
 def test_getNumComments():
     results = getAttrFromDB('comments')
     testPage = HTMLPage(testmode = True)
-    results[0][results[2]].attrs['id'] = results[2]
-    comments = testPage.getNumComments(results[0][results[2]], trim = True)
+    results[0][results[2]].attrs['id'] = results[2] # manually set the ID attr on the test data object. beautifulSoup doesn't set any attributes when passing in only the single element snippet.
+    comments = testPage.getNumComments(results[0][results[2]], trim = True) #Set Trim = true since the database contains raw digits instead of 'xx comments' format.
     assert comments == results[1]
 
 def test_getRank():

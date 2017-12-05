@@ -4,15 +4,8 @@
 Writing sorted data for https://news.ycombinator.com/ask
 The data is sorted by score
 
-headline: Ask HN: Where do you shop for PCs?
-rank: 1
-score: 2
-author: phyller
-age: 20
-comments: None
-
 headline: Ask HN: Ever been to shmoocon? Whats it like?
-rank: 3
+rank: 4
 score: 2
 author: a_lifters_life
 age: 1440
@@ -46,6 +39,13 @@ author: onmyway133
 age: 1080
 comments: None
 
+headline: Ask HN: Where do you shop for PCs?
+rank: 1
+score: 5
+author: phyller
+age: 50
+comments: 8
+
 headline: Ask HN: Selling my Slack App
 rank: 20
 score: 6
@@ -64,14 +64,14 @@ headline: Ask HN: Has anyone tried speed reading? Would you recommend practicing
 rank: 9
 score: 7
 author: Gormisdomai
-age: 1020
+age: 1080
 comments: 6
 
 headline: Ask HN: Is there a hackable Network Switch?
-rank: 18
+rank: 19
 score: 7
 author: bootcat
-age: 960
+age: 1020
 comments: 5
 
 headline: Ask HN: Open source software for tracking financial account balances?
@@ -88,19 +88,19 @@ author: baxtr
 age: 2880
 comments: 21
 
-headline: Ask HN: What is your life goal?
-rank: 21
-score: 13
-author: gallerdude
-age: 1440
-comments: 30
-
 headline: Ask HN: How will the 2018 Tax Plan impact startups and small businesses?
-rank: 15
+rank: 14
 score: 14
 author: arikr
 age: 1440
 comments: 4
+
+headline: Ask HN: What is your life goal?
+rank: 16
+score: 14
+author: gallerdude
+age: 1440
+comments: 31
 
 headline: Ask HN: What is your software specialization and what's interesting about it?
 rank: 22
@@ -120,11 +120,11 @@ headline: Ask HN: I received an offer, and the company asked me not to tell the 
 rank: 6
 score: 22
 author: throwaway94401
-age: 1080
-comments: 31
+age: 1140
+comments: 32
 
 headline: Ask HN: What about the software industry in Iran?
-rank: 16
+rank: 15
 score: 28
 author: erkanerol
 age: 2880
@@ -134,18 +134,18 @@ headline: Ask HN: What would you do if your income was taken care of?
 rank: 2
 score: 30
 author: samcgraw
-age: 720
-comments: 56
+age: 780
+comments: 57
 
 headline: Ask HN: Is working on online casinos unethical?
-rank: 13
-score: 30
+rank: 21
+score: 31
 author: bjourne
-age: 1440
-comments: 62
+age: 120
+comments: 67
 
 headline: Ask HN: Anyone who lost it all, or failed dismally, how did you start afresh?
-rank: 19
+rank: 18
 score: 33
 author: chirau
 age: 1440
@@ -159,7 +159,7 @@ age: 1440
 comments: 19
 
 headline: Ask HN: What's the best way to get a remote position
-rank: 4
+rank: 3
 score: 47
 author: inertiatic
 age: 1440
@@ -167,7 +167,7 @@ comments: 26
 
 headline: Ask HN: How do you get better at coding?
 rank: 26
-score: 51
+score: 52
 author: kilianso
 age: 1440
 comments: 63
@@ -187,7 +187,7 @@ age: 1440
 comments: 91
 
 headline: Ask HN: What are the big differences working at a startup, bigco, old smallco?
-rank: 14
+rank: 13
 score: 96
 author: aniijbod
 age: 2880
@@ -202,7 +202,7 @@ comments: 62
 
 headline: Ask HN: Time Management Tricks and Tips
 rank: 12
-score: 208
+score: 209
 author: wasi0013
 age: 4320
 comments: 76
@@ -212,7 +212,223 @@ rank: 5
 score: 584
 author: whoishiring
 age: 5760
-comments: 906
+comments: 908
+
+###NEW SECTION###
+
+
+Writing sorted data for https://news.ycombinator.com/news
+The data is sorted by score
+
+headline: Gusto is hiring full-stack Rails and React engineers in SF and Denver
+rank: 29
+score: None
+author: None
+age: 240
+comments: None
+
+headline: New Evidence Points to Icy Plate Tectonics on Europa
+rank: 23
+score: 3
+author: rbanffy
+age: 1440
+comments: None
+
+headline: Ask HN: Where do you shop for PCs?
+rank: 26
+score: 5
+author: phyller
+age: 50
+comments: 8
+
+headline: Alexa, are you listening?
+rank: 9
+score: 9
+author: hammock
+age: 19
+comments: 4
+
+headline: US Military's Microwave Weapon Can Fry North Korean Missile Electronics
+rank: 12
+score: 15
+author: seedifferently
+age: 37
+comments: 12
+
+headline: Intel Admits "Management Engine" Used for DRM Ripe with Vulnerabilities
+rank: 24
+score: 17
+author: canteloops
+age: 44
+comments: 3
+
+headline: The AI Guru Behind Amazon, Uber, and Unity Explains What AI Really Is
+rank: 18
+score: 26
+author: wildduck_io
+age: 1440
+comments: 17
+
+headline: Introduction to Hierarchical State Machines
+rank: 15
+score: 28
+author: jwdunne
+age: 240
+comments: 3
+
+headline: Dependent Types for F#
+rank: 3
+score: 29
+author: jackfoxy
+age: 1440
+comments: 3
+
+headline: Introducing Conduit
+rank: 7
+score: 29
+author: steveklabnik
+age: 53
+comments: 10
+
+headline: The Electronic Computers, Part 4: The Electronic Revolution
+rank: 27
+score: 43
+author: seventyhorses
+age: 600
+comments: 3
+
+headline: Don't Buy Anyone an Echo
+rank: 11
+score: 44
+author: rbanffy
+age: 37
+comments: 8
+
+headline: Show HN: Misocoin - A barebones Bitcoin-like protocol implemented in Python 3.6
+rank: 5
+score: 56
+author: kendrick__
+age: 120
+comments: 2
+
+headline: The Booming Server Market in the Wake of Skylake
+rank: 28
+score: 57
+author: rbanffy
+age: 720
+comments: 22
+
+headline: Is there data on the quality of management decisions?
+rank: 8
+score: 60
+author: luu
+age: 180
+comments: 16
+
+headline: The Cost Savings Of Netflix's Internal Spot Market
+rank: 14
+score: 62
+author: yarapavan
+age: 300
+comments: 27
+
+headline: Virtual Keyboard Developer Leaked 31M Client Records
+rank: 4
+score: 69
+author: danso
+age: 120
+comments: 21
+
+headline: Student Loan Debt Is Now as Big as the U.S. Junk Bond Market
+rank: 1
+score: 78
+author: rayuela
+age: 58
+comments: 65
+
+headline: AMD Epyc processors coming to Azure virtual machines
+rank: 22
+score: 80
+author: rbanffy
+age: 180
+comments: 16
+
+headline: Lightbot: Puzzles Game Using Programming Logic
+rank: 13
+score: 83
+author: karimf
+age: 300
+comments: 21
+
+headline: Deus Vult - Social Networks in Crusader Kings 2
+rank: 30
+score: 88
+author: creade
+age: 720
+comments: 32
+
+headline: Google for India: Building India-first products and features
+rank: 17
+score: 107
+author: jpatokal
+age: 240
+comments: 62
+
+headline: Android 8.1 Oreo
+rank: 19
+score: 110
+author: sohkamyung
+age: 540
+comments: 75
+
+headline: Building a Regex Engine in Fewer Than 40 Lines of Code
+rank: 20
+score: 114
+author: tambourine_man
+age: 660
+comments: 29
+
+headline: Zeta Global acquires commenting service Disqus (YC S07)
+rank: 6
+score: 134
+author: prostoalex
+age: 240
+comments: 50
+
+headline: FCC won't delay vote, says net neutrality supporters are "desperate"
+rank: 21
+score: 135
+author: adidash
+age: 120
+comments: 99
+
+headline: An $814M Mystery Near the Heart of the Biggest Bitcoin Exchange
+rank: 2
+score: 169
+author: rayuela
+age: 120
+comments: 150
+
+headline: Introduction to logic programming with Prolog
+rank: 10
+score: 174
+author: matchilling
+age: 420
+comments: 57
+
+headline: Using Artificial Intelligence to Augment Human Intelligence
+rank: 25
+score: 207
+author: runesoerensen
+age: 600
+comments: 22
+
+headline: The compelling case for working less
+rank: 16
+score: 362
+author: bigben00763
+age: 840
+comments: 191
 
 ###NEW SECTION###
 
@@ -220,85 +436,85 @@ comments: 906
 Writing sorted data for https://news.ycombinator.com/show
 The data is sorted by score
 
+headline: Show HN: I made a async schema library for node
+rank: 7
+score: 2
+author: klemenk
+age: 540
+comments: None
+
 headline: Show HN: Eggshell - a script library for you Mac menu bar
-rank: 9
+rank: 10
 score: 2
 author: hackathonguy
-age: 1020
+age: 1080
 comments: 6
 
+headline: Show HN: ReactJS SVG Bauble Toggle
+rank: 13
+score: 2
+author: chrisgannon
+age: 480
+comments: None
+
 headline: Show HN: T2.unlimited cost on the back of the napkin
-rank: 24
+rank: 26
 score: 2
 author: veermanhas
 age: 1440
 comments: None
 
 headline: Show HN: Dating and Networking Site for Instagram Users
-rank: 11
+rank: 12
 score: 3
 author: MeetNative
-age: 1080
+age: 1140
 comments: None
 
 headline: Show HN: Docup - The easiest way to write beautiful docs
-rank: 17
+rank: 19
 score: 3
 author: 0x142857
 age: 1440
 comments: None
 
 headline: Show HN: Black Out - Hide sensitive parts of an image
-rank: 20
+rank: 22
 score: 3
 author: mofle
 age: 1440
 comments: None
 
 headline: Show HN: Nm8, a tiny JavaScript animation lib under 260 bytes
-rank: 21
+rank: 23
 score: 3
 author: davidkpiano
 age: 1440
 comments: None
 
-headline: Show HN: Analyse hops taken by an email to reach you
-rank: 30
-score: 3
-author: akshayKMR
-age: 4320
-comments: None
-
 headline: Show HN: How Much is a Bitcoin Worth? - The value of a Bitcoin in popular goods
-rank: 25
+rank: 27
 score: 4
 author: iisbum
 age: 1440
 comments: 3
 
 headline: Show HN: 8chen - A New Hacker News Client for iOS
-rank: 26
+rank: 28
 score: 4
 author: 8chen
 age: 2880
 comments: 4
 
 headline: Show HN: Safe key exchange for multiple parties
-rank: 28
+rank: 30
 score: 4
 author: maxamel
 age: 4320
 comments: None
 
-headline: Show HN: Quick & dirty Python-to-Javascript syntax converter
-rank: 29
-score: 4
-author: mehrdadn
-age: 4320
-comments: None
-
 headline: Show HN: Move GitHub issues between repositories
-rank: 27
+rank: 29
 score: 5
 author: dessant
 age: 2880
@@ -312,112 +528,112 @@ age: 180
 comments: 2
 
 headline: Show HN: Golangbot - Tutorials for beginners to get started with Go programming
-rank: 4
+rank: 5
 score: 6
 author: spnvn
-age: 180
+age: 240
 comments: None
 
 headline: Show HN: Oh, My Coins - Database of Wasted Crypto Assets
-rank: 16
+rank: 18
 score: 6
 author: mlejva
 age: 1440
-comments: None
-
-headline: Show HN: Proof-of-work difficulty explained
-rank: 23
-score: 6
-author: b0ba1lle
-age: 2880
 comments: None
 
 headline: Show HN: Lost BTC wallet password? We might be able to help
 rank: 2
 score: 7
 author: dolfje
-age: 1440
-comments: 3
+age: 120
+comments: 6
+
+headline: Show HN: Proof-of-work difficulty explained
+rank: 25
+score: 7
+author: b0ba1lle
+age: 2880
+comments: None
 
 headline: Show HN: Truck.app: an SSH browser with rsync
-rank: 7
+rank: 8
 score: 9
 author: bonhardcomp
 age: 1440
 comments: 3
 
 headline: Show HN: Open source crowdfunding platform
-rank: 14
+rank: 16
 score: 12
 author: preek
 age: 1440
 comments: 3
 
 headline: Show HN: Entropy A.I
-rank: 18
+rank: 20
 score: 12
 author: sergeybn
 age: 1440
 comments: None
 
 headline: Show HN: A Raspberry Pi Video Streaming Robot
-rank: 10
+rank: 11
 score: 17
 author: johncole
 age: 2880
 comments: None
 
 headline: Show HN: ClarifyJs - Overcoming Limits of JavaScript Method Chaining
-rank: 22
+rank: 24
 score: 29
 author: omidh28
 age: 4320
 comments: 17
 
-headline: Show HN: Misocoin - A barebones Bitcoin-like protocol implemented in Python 3.6
-rank: 1
-score: 40
-author: kendrick__
-age: 1440
-comments: None
-
 headline: Show HN: Manage web sockets from AWS Lambda using Fanout
-rank: 8
+rank: 9
 score: 55
 author: jkarneges
 age: 1440
 comments: 7
 
+headline: Show HN: Misocoin - A barebones Bitcoin-like protocol implemented in Python 3.6
+rank: 1
+score: 56
+author: kendrick__
+age: 120
+comments: 2
+
 headline: Show HN: Graph Playground - Make Graphs/Networks and run Algorithms
-rank: 12
+rank: 15
 score: 57
 author: mikedombo
 age: 2880
 comments: 11
 
 headline: Show HN: Breach Insider - Detect a data breach using realistic pseudo-users
-rank: 19
+rank: 21
 score: 70
 author: graystevens
 age: 2880
 comments: 40
 
 headline: Show HN: Listen Notes Podcast Search API
-rank: 13
+rank: 14
 score: 79
 author: wenbin
 age: 4320
 comments: 29
 
 headline: Show HN: Freeciv WebGL 3D
-rank: 15
+rank: 17
 score: 103
 author: roschdal
 age: 4320
 comments: 15
 
 headline: Show HN: Echo Podcasts - Goodreads for podcasts
-rank: 5
+rank: 4
 score: 112
 author: dannylmathews
 age: 1140
@@ -429,220 +645,4 @@ score: 124
 author: superkarolis
 age: 1440
 comments: 107
-
-###NEW SECTION###
-
-
-Writing sorted data for https://news.ycombinator.com/news
-The data is sorted by score
-
-headline: Gusto is hiring full-stack Rails and React engineers in SF and Denver
-rank: 24
-score: None
-author: None
-age: 180
-comments: None
-
-headline: Introducing Conduit
-rank: 11
-score: 13
-author: steveklabnik
-age: 23
-comments: 6
-
-headline: Dependent Types for F#
-rank: 6
-score: 14
-author: jackfoxy
-age: 35
-comments: 2
-
-headline: The AI Guru Behind Amazon, Uber, and Unity Explains What AI Really Is
-rank: 15
-score: 21
-author: wildduck_io
-age: 41
-comments: 4
-
-headline: Introduction to Hierarchical State Machines
-rank: 10
-score: 25
-author: jwdunne
-age: 180
-comments: 2
-
-headline: Show HN: Misocoin - A barebones Bitcoin-like protocol implemented in Python 3.6
-rank: 4
-score: 40
-author: kendrick__
-age: 1440
-comments: None
-
-headline: The Electronic Computers, Part 4: The Electronic Revolution
-rank: 23
-score: 40
-author: seventyhorses
-age: 540
-comments: 2
-
-headline: Student Loan Debt Is Now as Big as the U.S. Junk Bond Market
-rank: 1
-score: 44
-author: rayuela
-age: 28
-comments: 11
-
-headline: Is there data on the quality of management decisions?
-rank: 7
-score: 50
-author: luu
-age: 120
-comments: 12
-
-headline: The Cost Savings Of Netflix's Internal Spot Market
-rank: 12
-score: 51
-author: yarapavan
-age: 240
-comments: 16
-
-headline: Virtual Keyboard Developer Leaked 31M Client Records
-rank: 5
-score: 52
-author: danso
-age: 120
-comments: 15
-
-headline: Emacs for the HP49G
-rank: 27
-score: 53
-author: brudgers
-age: 660
-comments: 15
-
-headline: The Booming Server Market in the Wake of Skylake
-rank: 22
-score: 56
-author: rbanffy
-age: 660
-comments: 22
-
-headline: Man Who Sent World's First Text Message 25 Years Ago
-rank: 30
-score: 62
-author: davesailer
-age: 840
-comments: 52
-
-headline: AMD Epyc processors coming to Azure virtual machines
-rank: 18
-score: 74
-author: rbanffy
-age: 180
-comments: 14
-
-headline: Lightbot: Puzzles Game Using Programming Logic
-rank: 9
-score: 80
-author: karimf
-age: 300
-comments: 21
-
-headline: Deus Vult - Social Networks in Crusader Kings 2
-rank: 25
-score: 83
-author: creade
-age: 720
-comments: 32
-
-headline: Android 8.1 Oreo
-rank: 19
-score: 101
-author: sohkamyung
-age: 480
-comments: 75
-
-headline: Google for India: Building India-first products and features
-rank: 14
-score: 105
-author: jpatokal
-age: 240
-comments: 60
-
-headline: Building a Regex Engine in Fewer Than 40 Lines of Code
-rank: 17
-score: 108
-author: tambourine_man
-age: 600
-comments: 29
-
-headline: Sysdig Inspect: A GUI for System Call Analysis
-rank: 21
-score: 113
-author: knoxa2511
-age: 840
-comments: 13
-
-headline: From Bezos to Walton, Big Investors Back Fund for 'Flyover' Startups
-rank: 26
-score: 114
-author: petethomas
-age: 660
-comments: 101
-
-headline: FCC won't delay vote, says net neutrality supporters are "desperate"
-rank: 16
-score: 122
-author: adidash
-age: 1440
-comments: 73
-
-headline: Zeta Global acquires commenting service Disqus (YC S07)
-rank: 3
-score: 130
-author: prostoalex
-age: 180
-comments: 45
-
-headline: An $814M Mystery Near the Heart of the Biggest Bitcoin Exchange
-rank: 2
-score: 150
-author: rayuela
-age: 120
-comments: 126
-
-headline: Introduction to logic programming with Prolog
-rank: 8
-score: 169
-author: matchilling
-age: 360
-comments: 56
-
-headline: How we saved money by replacing Mixpanel with BigQuery and K8S
-rank: 28
-score: 174
-author: tzury
-age: 720
-comments: 54
-
-headline: Using Artificial Intelligence to Augment Human Intelligence
-rank: 20
-score: 201
-author: runesoerensen
-age: 540
-comments: 21
-
-headline: Apple CEO backs China's 'open' Internet vision as censorship reaches new heights
-rank: 29
-score: 297
-author: tonyztan
-age: 840
-comments: 267
-
-headline: The compelling case for working less
-rank: 13
-score: 350
-author: bigben00763
-age: 840
-comments: 183
 
