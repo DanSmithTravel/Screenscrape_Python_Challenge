@@ -66,7 +66,7 @@ def test_createElementDict():
 
 def test_bakeLinkDict():
     answerKey = dict() # create a blank dict for our answers
-    colNames = ('itemID', 'id', 'headline', 'URL', 'score', 'author', 'age', 'comments') # the expected columns columns in the result, so get these from the database for our test data
+    colNames = ('itemID', 'id', 'headline', 'rank', 'URL', 'score', 'author', 'age', 'comments') # the expected columns columns in the result, so get these from the database for our test data
 
     try:
         dbm = db = sqlite3.connect('testdata/testingHTML.db') # Gotta open the database

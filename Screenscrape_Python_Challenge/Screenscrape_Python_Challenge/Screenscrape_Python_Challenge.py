@@ -13,7 +13,7 @@ from bs4 import BeautifulSoup
 def main():
     
 #    HTMLPage(testmode = True, testmodeFile = 'testdata\SampleHTML.html', localexec = True) # testmode localexec
-
+    generateTestData.generateBakedLinkDict()
     #get command line arguments and define the sort order to be used.
     validArgs = ('rank', 'id', 'score', 'age', 'comments')
     cmdArgs = getCmdArgs(validArgs)
@@ -63,7 +63,7 @@ def writeResultsToFile(results, filepath = 'output\output.txt', sortOrder = 'sco
         print('Writing results sorted by {} from {} to file: {}.'.format(sortOrder, page.URL, filepath)) #Diagnostic message
         try:
             fh.write('###NEW SECTION###\n\n\nWriting sorted data for {}\nThe data is sorted by {}\n\n'.format(page.URL, sortOrder)) # Write the section header with the page URL
-            for s in sorted(page.bakedDict.items(), key=lambda x:int(0 if getitem(x[1],sortOrder) == None else getitem(x[1],sortOrder))): # Use the Sorted function to help iterate through the Page's baked dictionary. Sorts using the passed in header.
+            for s in sorted(page.bakedDict.items(), key=lambda x:(int(0 if getitem(x[1],sortOrder) == None else getitem(x[1],sortOrder)), int(0 if getitem(x[1], 'rank') == None else getitem(x[1], 'rank')))): # Use the Sorted function to help iterate through the Page's baked dictionary. Sorts using the passed in header.
                 #print(s[1]['headline']) #Diagnostic message
                 for linkData in s[1]: #Iterate through each link group in the baked dict.
                     if linkData != 'URL' and linkData != 'id':  #Don't write the URL or the uniqueID to file.
@@ -101,7 +101,7 @@ class generateTestData():
             # create a table for the bakedLinkDict data
             cursor.execute('DROP TABLE IF EXISTS bakedLinkDict')
             cursor.execute('''CREATE TABLE bakedLinkDict(itemID TEXT PRIMARY KEY, id TEXT, headline TEXT,
-                            url TEXT, score TEXT, author TEXT, age TEXT, comments TEXT)''')
+                            rank TEXT, url TEXT, score TEXT, author TEXT, age TEXT, comments TEXT)''')
             db.commit()
         
             # generate data objects 
@@ -115,9 +115,11 @@ class generateTestData():
             y.bakeLinkDict(y.elementDict)
             # pull out element data and store it in the table.
             for element in y.bakedDict:
-                cursor.execute('''INSERT INTO bakedLinkDict(itemID, id, headline, url, score, author, age, comments)
-                                  VALUES(?,?,?,?,?,?,?,?)''', (str(element), str(y.bakedDict[element]['id']),
+                cursor.execute('''INSERT INTO bakedLinkDict(itemID, id, headline, rank, url, score, author, age, comments)
+                                  VALUES(?,?,?,?,?,?,?,?,?)''', (str(element),
+                                                               str(y.bakedDict[element]['id']),
                                                                str(y.bakedDict[element]['headline']), 
+                                                               str(y.bakedDict[element]['rank']),
                                                                str(y.bakedDict[element]['URL']),
                                                                str(y.bakedDict[element]['score']),
                                                                str(y.bakedDict[element]['author']),
