@@ -142,6 +142,16 @@ class HTMLPage:
             except:
                 pass
 
+    def getRank(self, element):
+        for tag in element.find_all('span'):
+            try:
+                if 'rank' in tag.get('class'):
+                    return re.search('\\d+', tag.next_element).group(0)
+                    #else: return tag.next_element
+
+            except:
+                pass
+
     def bakeLinkDict(self, uncookedLinkDict):
         """#Assembles a dictionary of formatted name/value pairs for relevant link information."""
         
@@ -149,6 +159,7 @@ class HTMLPage:
                 temp = dict() # Put all the local data into a temporary dictionary to group it.
                 temp['id'] = rawLinkGroup
                 temp['headline'] = self.getHeadline(uncookedLinkDict[rawLinkGroup])
+                temp['rank'] = self.getRank(uncookedLinkDict[rawLinkGroup])
                 temp['URL'] = self.getURL(uncookedLinkDict[rawLinkGroup]) # Makes diag output difficult to read. Re-enable later.
                 temp['score'] = self.getPoints(uncookedLinkDict[rawLinkGroup])
                 temp['author'] = self.getAuthor(uncookedLinkDict[rawLinkGroup])
