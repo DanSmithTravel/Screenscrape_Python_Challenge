@@ -13,12 +13,16 @@ from bs4 import BeautifulSoup
 def main():
     
 #    HTMLPage(testmode = True, testmodeFile = 'testdata\SampleHTML.html', localexec = True) # testmode localexec
-    generateTestData.generateBakedLinkDict()
+
     #get command line arguments and define the sort order to be used.
     validArgs = ('rank', 'id', 'score', 'age', 'comments')
     cmdArgs = getCmdArgs(validArgs)
-    if any(x in cmdArgs.sortOrder for x in validArgs): pass
-    else: cmdArgs.sortOrder = 'score' # set the default sort order to 'score'
+    if cmdArgs.sortOrder == None:
+        cmdArgs.sortOrder = 'score' # set the default sort order to 'score' if no sort arg was passed
+        print('No arguments set. Using default sort order of \'Score\'\n')
+    else:
+        if any(x in cmdArgs.sortOrder for x in validArgs): print('Invalid sort order. Using default sort order of \'Score\'\n')
+        else: cmdArgs.sortOrder = 'score' # set the default sort order to 'score' if an invalid arg was passed.
     
     # define the list of URLs to scrape.
     URLlist = {0 : 'https://news.ycombinator.com/news', 1 : 'https://news.ycombinator.com/show', 2 : 'https://news.ycombinator.com/ask'}
@@ -34,12 +38,16 @@ def main():
     loop.close()
 
     #Write everything to file using the sort order specified by the command line args.
-    writeResultsToFile(results, 'output\output.txt', sortOrder = cmdArgs.sortOrder)
+    if cmdArgs.filePath == None:
+            writeResultsToFile(results, sortOrder = cmdArgs.sortOrder)
+    else:
+        writeResultsToFile(results, filepath = cmdArgs.filePath, sortOrder = cmdArgs.sortOrder)
    
 def getCmdArgs(validArgs):
     '''Pulls commmand line arguments and returns the parsed object.'''
     parser = argparse.ArgumentParser()
     parser.add_argument('-s', action = 'store', dest = 'sortOrder', help = 'Specify the sort order. Defaults to \'score\' Acceptable values are: {}'.format(validArgs))
+    parser.add_argument('-p', action = 'store', dest = 'filePath', help = 'specify the explicit or relative file path to output data to. Defaults to \'output\'output.txt if not set.')
     return parser.parse_args()
     
 
@@ -47,7 +55,7 @@ def writeResultsToFile(results, filepath = 'output\output.txt', sortOrder = 'sco
     '''Write HTML page results to the passed in file. Overwrites previous data. Create a new file if the existing file is locked.'''
     
     try: # Try to open the passed in file
-        fh = open(filepath, mode = 'w')
+        fh = open(filepath, mode = 'w+')
         print('\nOpened {} for writing results.\n'.format(filepath)) # Diagnostic message
     except Exception as e:
         newfilepath = '{}.new{}'.format(re.search('.*?.[^.]*', filepath).group(0), re.search('[.].+', filepath).group(0)) # create a new filepath. Insert '.new' before the existing file extension.
@@ -63,16 +71,16 @@ def writeResultsToFile(results, filepath = 'output\output.txt', sortOrder = 'sco
         print('Writing results sorted by {} from {} to file: {}.'.format(sortOrder, page.URL, filepath)) #Diagnostic message
         try:
             fh.write('###NEW SECTION###\n\n\nWriting sorted data for {}\nThe data is sorted by {}\n\n'.format(page.URL, sortOrder)) # Write the section header with the page URL
-            for s in sorted(page.bakedDict.items(), key=lambda x:(int(0 if getitem(x[1],sortOrder) == None else getitem(x[1],sortOrder)), int(0 if getitem(x[1], 'rank') == None else getitem(x[1], 'rank')))): # Use the Sorted function to help iterate through the Page's baked dictionary. Sorts using the passed in header.
-                #print(s[1]['headline']) #Diagnostic message
+            for s in sorted(page.bakedDict.items(), key=lambda x:(int(0 if getitem(x[1],sortOrder) == None else getitem(x[1],sortOrder)), # Use the Sorted function to help iterate through the Page's baked dictionary. Sorts using the passed in header. 
+                                                                  int(0 if getitem(x[1], 'rank') == None else getitem(x[1], 'rank')))): # Use a secondary sort order of rank.
                 for linkData in s[1]: #Iterate through each link group in the baked dict.
                     if linkData != 'URL' and linkData != 'id':  #Don't write the URL or the uniqueID to file.
                         fh.write('{}: {}\n'.format(linkData, s[1].get(linkData))) # Write the key/value pair from the baked dictionary.
                 fh.write('\n') #spacer for readability.
+        
         except Exception as e:
             print('Encountered an error. Moving on to the next page, if available. Error:')
             print(e)
-            #fh.close()
 
     print('\nFinished writing to file.\n')
     fh.close() #close the file when we're all done writing.
