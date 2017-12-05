@@ -229,7 +229,7 @@ class HTMLPage:
             print('Finished async manual init of: {} at {}.\n It took {:.2f} seconds'.format(self.URL, time.time(), time.time() - manInitTime))
 
             return self
-        else: pass
+        else: return self
         
     async def process_async_HTMLBody(self, async_function, testmode = False, testmodeFile = None):
         if testmode:
