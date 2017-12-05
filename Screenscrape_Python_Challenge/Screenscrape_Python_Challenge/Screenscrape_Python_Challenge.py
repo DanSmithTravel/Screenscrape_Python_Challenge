@@ -17,12 +17,6 @@ def main():
     #get command line arguments and define the sort order to be used.
     validSortArgs = ('rank', 'id', 'score', 'age', 'comments')
     cmdArgs = getCmdArgs(validSortArgs)
-    if cmdArgs.sortOrder == None:
-        cmdArgs.sortOrder = 'score' # set the default sort order to 'score' if no sort arg was passed
-        print('No arguments set. Using default sort order of \'Score\'\n')
-    else:
-        if any(x in cmdArgs.sortOrder for x in validSortArgs): print('Invalid sort order. Using default sort order of \'Score\'\n')
-        else: cmdArgs.sortOrder = 'score' # set the default sort order to 'score' if an invalid arg was passed.
     
     # define the list of URLs to scrape.
     URLlist = {0 : 'https://news.ycombinator.com/news', 1 : 'https://news.ycombinator.com/show', 2 : 'https://news.ycombinator.com/ask'}
@@ -34,7 +28,7 @@ def main():
 
     #populate all the pages in the page dictionary
     loop = asyncio.get_event_loop()
-    results = loop.run_until_complete(runBlockingTasks(pageDict)) # execute object actions asynchronously
+    results = loop.run_until_complete(runBlockingTasks(pageDict))
     loop.close()
 
     stripBadPages(pageDict, results)
@@ -58,8 +52,16 @@ def getCmdArgs(validSortArgs):
     parser = argparse.ArgumentParser()
     parser.add_argument('-s', action = 'store', dest = 'sortOrder', help = 'Specify the sort order. Defaults to \'score\' Acceptable values are: {}'.format(validSortArgs))
     parser.add_argument('-p', action = 'store', dest = 'filePath', help = 'specify the explicit or relative file path to output data to. Defaults to \'output\'output.txt if not set.')
-    return parser.parse_args()
-    
+    cmdArgs = parser.parse_args()
+    if cmdArgs.sortOrder == None:
+        cmdArgs.sortOrder = 'score' # set the default sort order to 'score' if no sort arg was passed
+        print('No arguments set. Using default sort order of \'Score\'\n')
+    else:
+        if any(x in cmdArgs.sortOrder for x in validSortArgs): print('Invalid sort order. Using default sort order of \'Score\'\n')
+        else: cmdArgs.sortOrder = 'score' # set the default sort order to 'score' if an invalid arg was passed.
+   
+    return cmdArgs
+
 
 def writeResultsToFile(results, filepath = 'output\output.txt', sortOrder = 'score'):
     '''Write HTML page results to the passed in file. Overwrites previous data. Create a new file if the existing file is locked.'''
