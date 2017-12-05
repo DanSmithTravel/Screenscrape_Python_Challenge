@@ -5,7 +5,7 @@ from bs4 import BeautifulSoup
 from subprocess import call
 
 def test_commandLineArgs():
-    testfilepath = 'output/testOutput.txt'
+    testfilepath = 'testdata/testCommandLineArgs_Output.txt'
     if os.path.exists(testfilepath):
         try:
             os.remove(testfilepath)
@@ -27,3 +27,19 @@ def test_stripBadPages():
     results = [testPage,]
     Screenscrape_Python_Challenge.stripBadPages(PageDict, results) # Bad pages should be stripped out of results.
     assert results == []
+
+def test_writeResultsToFile():
+    pageList = [HTMLPage(testmode = True, testmodeFile = 'testdata\SampleHTML.html', localexec = True)]
+    testfilepath = 'testdata/testFileWriteOutput.txt'
+    answerKeyPath = 'testdata/testFileWriteAnswerKey.txt'
+    if os.path.exists(testfilepath):
+        try:
+            os.remove(testfilepath)
+        except Exception as e:
+            raise Exception('Test failing becasue file at {} could not be removed. It may be locked or in use. Error:'.format(testfilepath, e))
+    
+        
+    Screenscrape_Python_Challenge.writeResultsToFile(pageList, filepath = testfilepath)
+    testText = open(testfilepath).read()
+    answerKey = open(answerKeyPath).read()
+    assert testText == answerKey

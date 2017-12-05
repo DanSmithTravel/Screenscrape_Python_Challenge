@@ -1,0 +1,216 @@
+###NEW SECTION###
+
+
+Writing sorted data for testdata\SampleHTML.html
+The data is sorted by score
+
+headline: Gigster (on-demand developer teams) is hiring commercial sales reps
+rank: 11
+score: None
+author: None
+age: 36
+comments: None
+
+headline: Parents now spend twice as much time with their children as 50 years ago
+rank: 17
+score: 3
+author: elsewhen
+age: 10
+comments: None
+
+headline: Bacteria on the outside of the International Space Station
+rank: 16
+score: 11
+author: henrypray
+age: 1440
+comments: 4
+
+headline: What the Stoics did for us
+rank: 7
+score: 21
+author: kawera
+age: 57
+comments: 7
+
+headline: Show HN: Drag and drop dashboard builder based on CxJS and Firebase
+rank: 26
+score: 21
+author: mstijak
+age: 240
+comments: None
+
+headline: A Guide to Pitching Funding and Launch Stories
+rank: 5
+score: 22
+author: lainon
+age: 48
+comments: 3
+
+headline: Cutting cluster management fees on Google Kubernetes Engine
+rank: 13
+score: 26
+author: moritzplassnig
+age: 1440
+comments: 2
+
+headline: DASH playback of AV1 video in Firefox
+rank: 20
+score: 32
+author: slederer
+age: 180
+comments: 13
+
+headline: A Conversation with John Knoll (1998)
+rank: 23
+score: 35
+author: wallflower
+age: 300
+comments: 2
+
+headline: Ask HN: How do you use checklists?
+rank: 29
+score: 35
+author: mistakenot238
+age: 1440
+comments: 14
+
+headline: Tencent's Just Getting Started on Online Advertising
+rank: 12
+score: 37
+author: JumpCrisscross
+age: 180
+comments: 6
+
+headline: The Joy of Erlang; Or, How to Ride a Toruk (2011)
+rank: 4
+score: 43
+author: Tomte
+age: 120
+comments: 20
+
+headline: WeWork acquires Meetup.com
+rank: 15
+score: 43
+author: shinamee
+age: 56
+comments: 6
+
+headline: U.S. judge says Uber withheld evidence, delays Waymo trial
+rank: 9
+score: 52
+author: AnimalMuppet
+age: 1440
+comments: 16
+
+headline: Boiling the Ocean, Incrementally - How Stylo Brought Rust and Servo to Firefox
+rank: 2
+score: 57
+author: mnemonik
+age: 1440
+comments: None
+
+headline: How Cybercriminals Can Abuse Chat Platform APIs as C&C; Infrastructures [pdf]
+rank: 19
+score: 58
+author: lainon
+age: 240
+comments: 22
+
+headline: Meshkit
+rank: 14
+score: 60
+author: jdowner
+age: 300
+comments: 18
+
+headline: A Library of Parallel Algorithms
+rank: 8
+score: 71
+author: federicoponzi
+age: 180
+comments: 4
+
+headline: Lessons we learned while bootstrapping
+rank: 1
+score: 83
+author: brianjackson
+age: 1440
+comments: 36
+
+headline: Kotlin 1.2 Released: Sharing Code Between Platforms
+rank: 24
+score: 86
+author: dayanruben
+age: 120
+comments: 20
+
+headline: Netherlands fishmongers accuse herring-tasters of erring
+rank: 27
+score: 97
+author: lnguyen
+age: 600
+comments: 49
+
+headline: Artificial muscle lifts objects 1000x its own weight
+rank: 10
+score: 109
+author: lithander
+age: 300
+comments: 25
+
+headline: Radio Attack Lets Hackers Steal Cars with Just $20 Worth of Gear
+rank: 30
+score: 111
+author: touristtam
+age: 420
+comments: 119
+
+headline: Disable transparent hugepages
+rank: 22
+score: 159
+author: wheresvic3
+age: 600
+comments: 51
+
+headline: Brown University raising $120M to eliminate all student loans
+rank: 21
+score: 167
+author: champagnepapi
+age: 240
+comments: 109
+
+headline: The Poor Man's 3D Camera
+rank: 6
+score: 181
+author: et1337
+age: 300
+comments: 12
+
+headline: Firefox Debugger
+rank: 28
+score: 192
+author: Vinnl
+age: 540
+comments: 60
+
+headline: Show HN: Golang DNS server, including DNSSEC and DNS-over-TLS
+rank: 3
+score: 201
+author: tenta
+age: 300
+comments: 52
+
+headline: HP installs system-slowing spyware on its PCs
+rank: 18
+score: 285
+author: artsandsci
+age: 240
+comments: 182
+
+headline: DRM's Dead Canary: How We Lost the Web, What We Learned, and What to Do Next
+rank: 25
+score: 528
+author: mimi89999
+age: 480
+comments: 182
+

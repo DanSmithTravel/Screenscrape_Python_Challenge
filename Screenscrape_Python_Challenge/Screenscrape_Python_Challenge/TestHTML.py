@@ -66,7 +66,7 @@ def test_createElementDict():
 
 def test_bakeLinkDict():
     answerKey = dict() # create a blank dict for our answers
-    colNames = ('itemID', 'id', 'headline', 'rank', 'URL', 'score', 'author', 'age', 'comments') # the expected columns columns in the result, so get these from the database for our test data
+    colNames = ('itemID', 'id', 'headline', 'rank', 'URL', 'score', 'author', 'age', 'comments') # These are in the same order as the database and must not be altered.
 
     try:
         dbm = db = sqlite3.connect('testdata/testingHTML.db') # Gotta open the database
@@ -106,3 +106,76 @@ def test_bakeLinkDict():
     y.bakeLinkDict(y.elementDict) # Bake the dictionary to compare
 
     assert y.bakedDict == answerKey
+
+def getAttrFromDB(attribute):
+
+    answerKey = dict()
+    colNames = ('itemID', 'id', 'headline', 'rank', 'URL', 'score', 'author', 'age', 'comments') #database columnn names. These are in the same order as the database and must not be altered.
+    id = str()
+    testData = dict()
+
+    try:
+        dbm = db = sqlite3.connect('testdata/testingHTML.db') # Gotta open the database
+        cursor = db.cursor()
+        cursor.execute('SELECT * FROM elementDict LIMIT 1') # Select a single row from the element table with reference sample data
+        
+        for row in cursor:
+            testData[row[0]] = BeautifulSoup(row[1], 'html.parser')    #assign the row to a the testData object
+            id = row[0] # Save the row's ID
+
+        cursor.execute('SELECT * FROM bakedLinkDict WHERE id = {} LIMIT 1'.format(id)) # Select the row from the baked dict with the same ID to compare against.
+        for row in cursor:
+            answerKey = row[colNames.index(attribute)]
+
+        db.close()  # gotta close the db, too.
+        dbm.close()
+
+    except Exception as e:
+        print(e)
+        db.close()
+        dbm.close()
+        raise Exception(e)
+
+    return (testData, answerKey, id)
+
+def test_getHeadline():
+    results = getAttrFromDB('headline')
+    testPage = HTMLPage(testmode = True)
+
+    headline = testPage.getHeadline(results[0][results[2]])
+    assert headline == results[1]
+
+def test_getPoints():
+    results = getAttrFromDB('score')
+    testPage = HTMLPage(testmode = True)
+
+    points = testPage.getPoints(results[0][results[2]])
+    assert points == results[1]
+
+def test_getAuthor():
+    results = getAttrFromDB('author')
+    testPage = HTMLPage(testmode = True)
+
+    author = testPage.getAuthor(results[0][results[2]])
+    assert author == results[1]
+
+def test_getAge():
+    results = getAttrFromDB('age')
+    testPage = HTMLPage(testmode = True)
+
+    age = testPage.getAge(results[0][results[2]])
+    assert age == results[1]
+
+def test_getNumComments():
+    results = getAttrFromDB('comments')
+    testPage = HTMLPage(testmode = True)
+    results[0][results[2]].attrs['id'] = results[2]
+    comments = testPage.getNumComments(results[0][results[2]], trim = True)
+    assert comments == results[1]
+
+def test_getRank():
+    results = getAttrFromDB('rank')
+    testPage = HTMLPage(testmode = True)
+
+    rank = testPage.getRank(results[0][results[2]])
+    assert rank == results[1]

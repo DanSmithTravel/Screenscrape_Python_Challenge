@@ -184,6 +184,7 @@ class HTMLPage:
         if 'testmode' in kwargs: # if testmode(any value) was passed in, run object in testing mode with local HTML from file.
             print('HTMLPage Object from {} created at {}\n'.format(kwargs.get('testmodeFile'), time.time()))
             if 'localexec' in kwargs: # if localexec(any value) was passed in, go ahead and automatically run the init methods with the passed file.
+                self.URL = kwargs.get('testmodeFile')
                 loop = asyncio.new_event_loop() # generate a new loop in case we're already executing in one.
                 asyncio.set_event_loop(loop) # set the new loop
                 

@@ -1,0 +1,648 @@
+###NEW SECTION###
+
+
+Writing sorted data for https://news.ycombinator.com/news
+The data is sorted by age
+
+headline: Introducing Conduit
+rank: 12
+score: 5
+author: steveklabnik
+age: 7
+comments: None
+
+headline: Student Loan Debt Is Now as Big as the U.S. Junk Bond Market
+rank: 2
+score: 22
+author: rayuela
+age: 12
+comments: None
+
+headline: Dependent Types for F#
+rank: 9
+score: 7
+author: jackfoxy
+age: 19
+comments: None
+
+headline: The AI Guru Behind Amazon, Uber, and Unity Explains What AI Really Is
+rank: 16
+score: 14
+author: wildduck_io
+age: 24
+comments: 3
+
+headline: An $814M Mystery Near the Heart of the Biggest Bitcoin Exchange
+rank: 1
+score: 139
+author: rayuela
+age: 120
+comments: 105
+
+headline: Is there data on the quality of management decisions?
+rank: 7
+score: 47
+author: luu
+age: 120
+comments: 12
+
+headline: Zeta Global acquires commenting service Disqus (YC S07)
+rank: 3
+score: 126
+author: prostoalex
+age: 180
+comments: 43
+
+headline: Introduction to Hierarchical State Machines
+rank: 13
+score: 22
+author: jwdunne
+age: 180
+comments: 2
+
+headline: AMD Epyc processors coming to Azure virtual machines
+rank: 17
+score: 71
+author: rbanffy
+age: 180
+comments: 14
+
+headline: Gusto is hiring full-stack Rails and React engineers in SF and Denver
+rank: 22
+score: None
+author: None
+age: 180
+comments: None
+
+headline: Google for India: Building India-first products and features
+rank: 6
+score: 100
+author: jpatokal
+age: 240
+comments: 54
+
+headline: The Cost Savings Of Netflix's Internal Spot Market
+rank: 14
+score: 49
+author: yarapavan
+age: 240
+comments: 15
+
+headline: Lightbot: Puzzles Game Using Programming Logic
+rank: 11
+score: 78
+author: karimf
+age: 300
+comments: 21
+
+headline: Introduction to logic programming with Prolog
+rank: 10
+score: 164
+author: matchilling
+age: 360
+comments: 56
+
+headline: Android 8.1 Oreo
+rank: 20
+score: 96
+author: sohkamyung
+age: 480
+comments: 75
+
+headline: Using Artificial Intelligence to Augment Human Intelligence
+rank: 21
+score: 197
+author: runesoerensen
+age: 540
+comments: 21
+
+headline: The Electronic Computers, Part 4: The Electronic Revolution
+rank: 26
+score: 39
+author: seventyhorses
+age: 540
+comments: 2
+
+headline: Building a Regex Engine in Fewer Than 40 Lines of Code
+rank: 18
+score: 104
+author: tambourine_man
+age: 600
+comments: 29
+
+headline: The Booming Server Market in the Wake of Skylake
+rank: 25
+score: 55
+author: rbanffy
+age: 660
+comments: 22
+
+headline: Deus Vult - Social Networks in Crusader Kings 2
+rank: 27
+score: 82
+author: creade
+age: 660
+comments: 31
+
+headline: From Bezos to Walton, Big Investors Back Fund for 'Flyover' Startups
+rank: 28
+score: 110
+author: petethomas
+age: 660
+comments: 94
+
+headline: Emacs for the HP49G
+rank: 29
+score: 53
+author: brudgers
+age: 660
+comments: 15
+
+headline: How we saved money by replacing Mixpanel with BigQuery and K8S
+rank: 30
+score: 174
+author: tzury
+age: 720
+comments: 54
+
+headline: The compelling case for working less
+rank: 15
+score: 344
+author: bigben00763
+age: 780
+comments: 181
+
+headline: Barliman - real-time program synthesis to make the programmer's life easier
+rank: 19
+score: 173
+author: michaelsbradley
+age: 840
+comments: 35
+
+headline: Sysdig Inspect: A GUI for System Call Analysis
+rank: 24
+score: 111
+author: knoxa2511
+age: 840
+comments: 13
+
+headline: The German Amateurs Who Discovered 'Insect Armageddon'
+rank: 23
+score: 129
+author: sohkamyung
+age: 900
+comments: 54
+
+headline: Virtual Keyboard Developer Leaked 31M Client Records
+rank: 4
+score: 47
+author: danso
+age: 1440
+comments: 9
+
+headline: Show HN: Misocoin - A barebones Bitcoin-like protocol implemented in Python 3.6
+rank: 5
+score: 34
+author: kendrick__
+age: 1440
+comments: None
+
+headline: FCC won't delay vote, says net neutrality supporters are "desperate"
+rank: 8
+score: 113
+author: adidash
+age: 1440
+comments: 62
+
+###NEW SECTION###
+
+
+Writing sorted data for https://news.ycombinator.com/show
+The data is sorted by age
+
+headline: Show HN: Daily e-mail with all HN stories over x points
+rank: 2
+score: 6
+author: dietervds
+age: 120
+comments: 2
+
+headline: Show HN: Golangbot - Tutorials for beginners to get started with Go programming
+rank: 4
+score: 6
+author: spnvn
+age: 180
+comments: None
+
+headline: Show HN: Eggshell - a script library for you Mac menu bar
+rank: 9
+score: 2
+author: hackathonguy
+age: 1020
+comments: 6
+
+headline: Show HN: Dating and Networking Site for Instagram Users
+rank: 11
+score: 3
+author: MeetNative
+age: 1080
+comments: None
+
+headline: Show HN: Echo Podcasts - Goodreads for podcasts
+rank: 5
+score: 112
+author: dannylmathews
+age: 1140
+comments: 75
+
+headline: Show HN: Misocoin - A barebones Bitcoin-like protocol implemented in Python 3.6
+rank: 1
+score: 33
+author: kendrick__
+age: 1440
+comments: None
+
+headline: Show HN: Lost BTC wallet password? We might be able to help
+rank: 3
+score: 6
+author: dolfje
+age: 1440
+comments: 2
+
+headline: Show HN: Go Freaking Do It - Smart contract for reaching your goals
+rank: 6
+score: 124
+author: superkarolis
+age: 1440
+comments: 107
+
+headline: Show HN: Truck.app: an SSH browser with rsync
+rank: 7
+score: 9
+author: bonhardcomp
+age: 1440
+comments: 3
+
+headline: Show HN: Manage web sockets from AWS Lambda using Fanout
+rank: 8
+score: 54
+author: jkarneges
+age: 1440
+comments: 7
+
+headline: Show HN: Open source crowdfunding platform
+rank: 14
+score: 12
+author: preek
+age: 1440
+comments: 3
+
+headline: Show HN: Oh, My Coins - Database of Wasted Crypto Assets
+rank: 16
+score: 6
+author: mlejva
+age: 1440
+comments: None
+
+headline: Show HN: Docup - The easiest way to write beautiful docs
+rank: 17
+score: 3
+author: 0x142857
+age: 1440
+comments: None
+
+headline: Show HN: Entropy A.I
+rank: 18
+score: 12
+author: sergeybn
+age: 1440
+comments: None
+
+headline: Show HN: Black Out - Hide sensitive parts of an image
+rank: 20
+score: 3
+author: mofle
+age: 1440
+comments: None
+
+headline: Show HN: Nm8, a tiny JavaScript animation lib under 260 bytes
+rank: 21
+score: 3
+author: davidkpiano
+age: 1440
+comments: None
+
+headline: Show HN: T2.unlimited cost on the back of the napkin
+rank: 24
+score: 2
+author: veermanhas
+age: 1440
+comments: None
+
+headline: Show HN: How Much is a Bitcoin Worth? - The value of a Bitcoin in popular goods
+rank: 25
+score: 4
+author: iisbum
+age: 1440
+comments: 3
+
+headline: Show HN: A Raspberry Pi Video Streaming Robot
+rank: 10
+score: 17
+author: johncole
+age: 2880
+comments: None
+
+headline: Show HN: Graph Playground - Make Graphs/Networks and run Algorithms
+rank: 12
+score: 57
+author: mikedombo
+age: 2880
+comments: 11
+
+headline: Show HN: Breach Insider - Detect a data breach using realistic pseudo-users
+rank: 19
+score: 70
+author: graystevens
+age: 2880
+comments: 40
+
+headline: Show HN: Proof-of-work difficulty explained
+rank: 23
+score: 6
+author: b0ba1lle
+age: 2880
+comments: None
+
+headline: Show HN: 8chen - A New Hacker News Client for iOS
+rank: 26
+score: 4
+author: 8chen
+age: 2880
+comments: 4
+
+headline: Show HN: Move GitHub issues between repositories
+rank: 27
+score: 5
+author: dessant
+age: 2880
+comments: None
+
+headline: Show HN: Listen Notes Podcast Search API
+rank: 13
+score: 79
+author: wenbin
+age: 4320
+comments: 29
+
+headline: Show HN: Freeciv WebGL 3D
+rank: 15
+score: 103
+author: roschdal
+age: 4320
+comments: 15
+
+headline: Show HN: ClarifyJs - Overcoming Limits of JavaScript Method Chaining
+rank: 22
+score: 29
+author: omidh28
+age: 4320
+comments: 17
+
+headline: Show HN: Safe key exchange for multiple parties
+rank: 28
+score: 4
+author: maxamel
+age: 4320
+comments: None
+
+headline: Show HN: Quick & dirty Python-to-Javascript syntax converter
+rank: 29
+score: 4
+author: mehrdadn
+age: 4320
+comments: None
+
+headline: Show HN: Analyse hops taken by an email to reach you
+rank: 30
+score: 3
+author: akshayKMR
+age: 4320
+comments: None
+
+###NEW SECTION###
+
+
+Writing sorted data for https://news.ycombinator.com/ask
+The data is sorted by age
+
+headline: Ask HN: Ever been to shmoocon? Whats it like?
+rank: 2
+score: 2
+author: a_lifters_life
+age: 54
+comments: None
+
+headline: Ask HN: Are you a hacker?
+rank: 6
+score: 2
+author: itsevrgrn
+age: 420
+comments: None
+
+headline: Ask HN: What would you do if your income was taken care of?
+rank: 1
+score: 30
+author: samcgraw
+age: 720
+comments: 55
+
+headline: Ask HN: Is there a hackable Network Switch?
+rank: 16
+score: 7
+author: bootcat
+age: 960
+comments: 5
+
+headline: Ask HN: Has anyone tried speed reading? Would you recommend practicing?
+rank: 8
+score: 7
+author: Gormisdomai
+age: 1020
+comments: 6
+
+headline: Ask HN: How does Bitcoin Core affect current Bitcoin?
+rank: 11
+score: 3
+author: onmyway133
+age: 1020
+comments: None
+
+headline: Ask HN: I received an offer, and the company asked me not to tell the recruiter
+rank: 5
+score: 22
+author: throwaway94401
+age: 1080
+comments: 31
+
+headline: Ask HN: What's the best way to get a remote position
+rank: 3
+score: 46
+author: inertiatic
+age: 1380
+comments: 26
+
+headline: Ask HN: How do you get better at coding?
+rank: 25
+score: 50
+author: kilianso
+age: 1380
+comments: 63
+
+headline: Ask HN: Your favourite outstandingly creative/informative YouTube channels?
+rank: 7
+score: 38
+author: yesenadam
+age: 1440
+comments: 19
+
+headline: Ask HN: Is working on online casinos unethical?
+rank: 9
+score: 29
+author: bjourne
+age: 1440
+comments: 55
+
+headline: Ask HN: How will the 2018 Tax Plan impact startups and small businesses?
+rank: 14
+score: 14
+author: arikr
+age: 1440
+comments: 4
+
+headline: Ask HN: In your company, how important is code quality vs. getting things done
+rank: 17
+score: 92
+author: maephisto
+age: 1440
+comments: 91
+
+headline: Ask HN: Anyone who lost it all, or failed dismally, how did you start afresh?
+rank: 18
+score: 33
+author: chirau
+age: 1440
+comments: 21
+
+headline: Ask HN: Selling my Slack App
+rank: 19
+score: 6
+author: rgbasin
+age: 1440
+comments: 6
+
+headline: Ask HN: What is your life goal?
+rank: 20
+score: 13
+author: gallerdude
+age: 1440
+comments: 29
+
+headline: Ask HN: HN users keep using verbatim blocks for quotes. Can we fix it?
+rank: 26
+score: 2
+author: swift
+age: 1440
+comments: None
+
+headline: Ask HN: What are the big differences working at a startup, bigco, old smallco?
+rank: 13
+score: 96
+author: aniijbod
+age: 2880
+comments: 42
+
+headline: Ask HN: What about the software industry in Iran?
+rank: 15
+score: 28
+author: erkanerol
+age: 2880
+comments: 9
+
+headline: Ask HN: Is whitelabeling your software a good idea?
+rank: 22
+score: 15
+author: pixelfeeder
+age: 2880
+comments: 4
+
+headline: Ask HN: What about women on HN?
+rank: 23
+score: 10
+author: baxtr
+age: 2880
+comments: 21
+
+headline: Polyglot programming communities
+rank: 24
+score: 6
+author: avrmav
+age: 2880
+comments: 3
+
+headline: Ask HN: Open source software for tracking financial account balances?
+rank: 27
+score: 7
+author: dplgk
+age: 2880
+comments: 2
+
+headline: Ask HN: Resource recommendations for "Everything about concurrency" presentation
+rank: 29
+score: 3
+author: erkanerol
+age: 2880
+comments: None
+
+headline: Ask HN: Transfer app between developer accounts on PlayStore
+rank: 30
+score: 3
+author: ansh0l
+age: 2880
+comments: None
+
+headline: Ask HN: What coding challenge sites should I try next?
+rank: 10
+score: 134
+author: lakechfoma
+age: 4320
+comments: 62
+
+headline: Ask HN: Time Management Tricks and Tips
+rank: 12
+score: 208
+author: wasi0013
+age: 4320
+comments: 76
+
+headline: Ask HN: What is your software specialization and what's interesting about it?
+rank: 21
+score: 15
+author: skellera
+age: 4320
+comments: 9
+
+headline: Ask HN: At your company, what things do you want to outsource but can't?
+rank: 28
+score: 52
+author: stretchwithme
+age: 4320
+comments: 52
+
+headline: Ask HN: Who is hiring? (December 2017)
+rank: 4
+score: 584
+author: whoishiring
+age: 5760
+comments: 905
+

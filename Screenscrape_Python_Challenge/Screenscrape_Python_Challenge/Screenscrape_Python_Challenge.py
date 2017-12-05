@@ -2,18 +2,16 @@
 # Developed by Daniel Smith
 # This application will scrape html element data from https://news.ycombinator.com/ and collate that data into a local text file.
 
-import asyncio, asyncore, argparse, urllib.request, http, sqlite3, re
+import asyncio, asyncore, argparse, urllib.request, http, sqlite3, re, TestHTML
 from operator import *
 from concurrent import futures
 from HTMLPage import HTMLPage
-from TestHTML import test_parsePage, test_bakeLinkDict
-from TestHTML import test_createElementDict
 from bs4 import BeautifulSoup
 
 def main():
     
 #    HTMLPage(testmode = True, testmodeFile = 'testdata\SampleHTML.html', localexec = True) # testmode localexec
-
+    TestHTML.test_getNumComments()
     #get command line arguments and define the sort order to be used.
     validSortArgs = ('rank', 'id', 'score', 'age', 'comments')
     cmdArgs = getCmdArgs(validSortArgs)
